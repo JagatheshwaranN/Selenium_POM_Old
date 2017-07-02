@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
+        <methods>
+          <include name="close"/>
+          <include name="testSignIn" invocation-numbers="0"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

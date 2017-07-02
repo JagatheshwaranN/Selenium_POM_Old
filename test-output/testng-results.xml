@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="52461" started-at="2017-07-02T04:30:44Z" finished-at="2017-07-02T04:31:37Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="52461" started-at="2017-07-02T04:30:44Z" finished-at="2017-07-02T04:31:37Z">
+      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="setup" is-config="true" duration-ms="43897" started-at="2017-07-02T10:00:45Z" finished-at="2017-07-02T10:01:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="testSignIn" duration-ms="5041" started-at="2017-07-02T10:01:32Z" data-provider="loginData" finished-at="2017-07-02T10:01:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SignIn]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[testjaga002@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[jaga@298]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSignIn -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="close" is-config="true" duration-ms="77" started-at="2017-07-02T10:01:37Z" finished-at="2017-07-02T10:01:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

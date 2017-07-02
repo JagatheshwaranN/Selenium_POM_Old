@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression Suite]">
+  <test name="Registration(failed)">
+    <classes>
+      <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
+        <methods>
+          <include name="close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
+      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
+        <methods>
+          <include name="testSignIn"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+    </classes>
+  </test> <!-- Registration(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->
