@@ -50,9 +50,9 @@ public class CreateAnAccount
 		
 		cf.clickByXpath(CreateAccContinueBtn);
 		cf.clickByXpath(Male);
-		cf.enterTextByName(FirstName, "Jagatheshwaran");
-		cf.enterTextByName(LastName, "Narayanasamy");
-		cf.enterTextById(DateofBirth, "08/29/1993");
+		cf.enterTextByName(FirstName, "John");
+		cf.enterTextByName(LastName, "Smith");
+		cf.enterTextById(DateofBirth, "08/29/1991");
 		cf.enterTextByName(Email,EmailAddress);
 		cf.enterTextByName(Company, companyName);
 		cf.enterTextByName(Address, "Sholinganallur");
@@ -60,7 +60,7 @@ public class CreateAnAccount
 		cf.enterTextByName(City, "Chennai");
 		cf.enterTextByName(State, "TamilNadu");
 		cf.selectVisibleTextByName(Country, "India");
-		cf.enterTextByName(TelPhoneNo, "8015732511");
+		cf.enterTextByName(TelPhoneNo, "1234567890");
 		cf.enterTextByName(Password, AccPassword);
 		cf.enterTextByName(ConfirmPassword, AccConfirmPassword);
 		cf.clickById(Submit);

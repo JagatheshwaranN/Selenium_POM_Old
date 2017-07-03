@@ -35,9 +35,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-
 /**
  * A class is created with name : Common_Functionalities
  */
@@ -55,8 +52,7 @@ public class Common_Functions {
 	public static WebDriverWait wait;
 	public WebElement element;
 	Common_Functions cf;
-	public static ExtentReports extent;
-	public static ExtentTest test;
+	public static int indexSI = 1;
 
 	/**
 	 * This method will load the property file,select the browser and launch the
@@ -66,6 +62,7 @@ public class Common_Functions {
 	 */
 
 	public void init() throws IOException {
+
 		loadProperties();
 		selectBrowser(Repository.getProperty("browser"));
 		driver.get(Repository.getProperty("url"));
@@ -1383,4 +1380,8 @@ public class Common_Functions {
 
 	}
 
+	public String getCurrentUrl() {
+		String Url = driver.getCurrentUrl();
+		return Url;
+	}
 }

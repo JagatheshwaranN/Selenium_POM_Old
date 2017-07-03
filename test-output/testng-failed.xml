@@ -6,7 +6,7 @@
       <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
         <methods>
           <include name="close"/>
-          <include name="testSignIn" invocation-numbers="0"/>
+          <include name="testSignIn" invocation-numbers="1"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->

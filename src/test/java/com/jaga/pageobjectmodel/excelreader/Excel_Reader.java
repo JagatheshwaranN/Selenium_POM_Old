@@ -113,18 +113,4 @@ public class Excel_Reader {
 		return 0;
 	}
 
-	/*
-	 * public static void main(String[] args) { String path =
-	 * System.getProperty("user.dir") +
-	 * "//src//test//resources//testdata//TestData.xlsx"; Excel_Reader obj = new
-	 * Excel_Reader(path); // System.out.println(obj.getCellData("Login",
-	 * "UserName", 4));
-	 * 
-	 * //System.out.println(obj.getRowCount("SignIn"));
-	 * 
-	 * //System.out.println(obj.getColumnCount("SignIn"));
-	 * 
-	 * System.out.println(obj.getCellData("SignIn", 2, 2)); }
-	 */
-
 }

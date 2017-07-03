@@ -3,8 +3,10 @@ package com.jaga.pageobjectmodel.testscripts;
 import java.io.IOException;
 
 import org.testng.SkipException;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -17,16 +19,15 @@ public class TC002_SignIn extends Common_Functions {
 	Common_Functions cf;
 	SignIn sign;
 
-	@BeforeClass
+	@BeforeMethod
 	public void setup() throws IOException {
 		init();
+
 	}
 
 	public Object[][] getData(String ExcelName, String testcase) {
-		Excel_Reader Data = new Excel_Reader(System.getProperty("user.dir")
-				+ "//src//test//resources//testdata//" + ExcelName);
+		Excel_Reader Data = new Excel_Reader(System.getProperty("user.dir") + "//src//test//resources//testdata//" + ExcelName);
 		int rowNum = Data.getRowCount(testcase);
-		System.out.println(rowNum);
 		int colNum = Data.getColumnCount(testcase);
 		Object sampleData[][] = new Object[rowNum - 1][colNum];
 		for (int i = 2; i <= rowNum; i++) {
@@ -38,14 +39,13 @@ public class TC002_SignIn extends Common_Functions {
 	}
 
 	@DataProvider
-	public Object[][] loginData() {
+	public Object[][] signinData() {
 		Object[][] data = getData("TestData.xlsx", "SignIn");
 		return data;
 	}
 
-	@Test(dataProvider = "loginData")
-	public void testSignIn(String RunMode, String TestCase, String UserName,
-			String Passwords) throws InterruptedException, IOException {
+	@Test(dataProvider = "signinData")
+	public void testSignIn(String RunMode, String TestCase, String UserName, String Passwords) throws InterruptedException, IOException {
 		try {
 			if (RunMode.equals("N")) {
 				throw new SkipException("Skipping the test");
@@ -59,18 +59,10 @@ public class TC002_SignIn extends Common_Functions {
 
 	}
 
-	public void testSignIn() throws InterruptedException, IOException {
-		try {
-			sign = new SignIn();
-			// sign.SignInTOAccount();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	@AfterClass
+	@AfterMethod
 	public void close() {
 		closeBrowser();
+
 	}
 
 }
