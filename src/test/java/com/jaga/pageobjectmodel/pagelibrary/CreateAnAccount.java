@@ -36,33 +36,28 @@ public class CreateAnAccount
 	
 
 	
-	public void createAccountRegistration() throws InvocationTargetException
+	public void createAccountRegistration(String firstName, String lastName, String dateofBirth, String email, String company, String address, String zipcode, String city, String state, String country, String telPhoneNo, String password, String confirmPassword) throws InvocationTargetException
 	{
-		
-		String EmailAddress = cf.getTestData("CreateAccAddrEmail");
-		String companyName = cf.getTestData("CreateAccAddrCompany");
-		String AccPassword = cf.getTestData("CreateAccPassword");
-		String AccConfirmPassword = cf.getTestData("CreateAccConfirmPassword");
-		
+	
 		try
 		{
 		logger.info("The Registration details for the Create Account");
 		
 		cf.clickByXpath(CreateAccContinueBtn);
 		cf.clickByXpath(Male);
-		cf.enterTextByName(FirstName, "John");
-		cf.enterTextByName(LastName, "Smith");
-		cf.enterTextById(DateofBirth, "08/29/1991");
-		cf.enterTextByName(Email,EmailAddress);
-		cf.enterTextByName(Company, companyName);
-		cf.enterTextByName(Address, "Sholinganallur");
-		cf.enterTextByName(Zipcode, "600119");
-		cf.enterTextByName(City, "Chennai");
-		cf.enterTextByName(State, "TamilNadu");
-		cf.selectVisibleTextByName(Country, "India");
-		cf.enterTextByName(TelPhoneNo, "1234567890");
-		cf.enterTextByName(Password, AccPassword);
-		cf.enterTextByName(ConfirmPassword, AccConfirmPassword);
+		cf.enterTextByName(FirstName, firstName);
+		cf.enterTextByName(LastName, lastName);
+		cf.enterTextById(DateofBirth, dateofBirth);
+		cf.enterTextByName(Email,email);
+		cf.enterTextByName(Company, company);
+		cf.enterTextByName(Address, address);
+		cf.enterTextByName(Zipcode, zipcode);
+		cf.enterTextByName(City, city);
+		cf.enterTextByName(State, state);
+		cf.selectVisibleTextByName(Country, country);
+		cf.enterTextByName(TelPhoneNo, telPhoneNo);
+		cf.enterTextByName(Password, password);
+		cf.enterTextByName(ConfirmPassword, confirmPassword);
 		cf.clickById(Submit);
 		
 		Thread.sleep(5000);

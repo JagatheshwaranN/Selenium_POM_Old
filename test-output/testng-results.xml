@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="90057" started-at="2017-07-03T16:31:23Z" finished-at="2017-07-03T16:32:53Z">
+  <suite name="Regression Suite" duration-ms="228736" started-at="2017-07-04T16:29:49Z" finished-at="2017-07-04T16:33:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="90057" started-at="2017-07-03T16:31:23Z" finished-at="2017-07-03T16:32:53Z">
-      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="setup" is-config="true" duration-ms="37275" started-at="2017-07-03T22:01:24Z" finished-at="2017-07-03T22:02:01Z">
+    <test name="CreateAccount" duration-ms="166372" started-at="2017-07-04T16:29:49Z" finished-at="2017-07-04T16:32:35Z">
+      <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="setup" is-config="true" duration-ms="125847" started-at="2017-07-04T21:59:50Z" finished-at="2017-07-04T22:01:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="testSignIn" duration-ms="13374" started-at="2017-07-03T22:02:01Z" data-provider="loginData" finished-at="2017-07-03T22:02:15Z">
+        <test-method status="PASS" signature="createAccountRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="createAccountRegistration" duration-ms="39382" started-at="2017-07-04T22:01:56Z" data-provider="createAccountData" finished-at="2017-07-04T22:02:35Z">
           <params>
             <param index="0">
               <value>
@@ -20,32 +20,91 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[SignIn]]>
+                <![CDATA[CreateAccount]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[testjaga002@gmail.com]]>
+                <![CDATA[John]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[jaga@2983]]>
+                <![CDATA[Smith]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[08/29/1993]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[testjaga006@gmail.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Software Company ]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Sholinganallur]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[600119.0]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Chennai]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Tamil Nadu]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[1.23456789E9]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[jaga@12345]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[jaga@12345]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSignIn -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="close" is-config="true" duration-ms="41" started-at="2017-07-03T22:02:15Z" finished-at="2017-07-03T22:02:15Z">
+        </test-method> <!-- createAccountRegistration -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="close" is-config="true" duration-ms="64" started-at="2017-07-04T22:02:35Z" finished-at="2017-07-04T22:02:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="setup" is-config="true" duration-ms="25389" started-at="2017-07-03T22:02:15Z" finished-at="2017-07-03T22:02:40Z">
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
+    </test> <!-- CreateAccount -->
+    <test name="SignIn" duration-ms="62060" started-at="2017-07-04T16:32:36Z" finished-at="2017-07-04T16:33:38Z">
+      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1a5c39e]" name="setup" is-config="true" duration-ms="36369" started-at="2017-07-04T22:02:36Z" finished-at="2017-07-04T22:03:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="testSignIn" duration-ms="12774" started-at="2017-07-03T22:02:40Z" data-provider="loginData" finished-at="2017-07-03T22:02:53Z">
+        <test-method status="PASS" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1a5c39e]" name="testSignIn" duration-ms="25540" started-at="2017-07-04T22:03:12Z" data-provider="signinData" finished-at="2017-07-04T22:03:38Z">
           <params>
             <param index="0">
               <value>
@@ -59,23 +118,23 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[testjaga002@gmail.com]]>
+                <![CDATA[testjaga006@gmail.com]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[jaga@2983]]>
+                <![CDATA[jaga@12345]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSignIn -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1baeedf]" name="close" is-config="true" duration-ms="36" started-at="2017-07-03T22:02:53Z" finished-at="2017-07-03T22:02:53Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1a5c39e]" name="close" is-config="true" duration-ms="42" started-at="2017-07-04T22:03:38Z" finished-at="2017-07-04T22:03:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- SignIn -->
+  </suite> <!-- Regression Suite -->
 </testng-results>

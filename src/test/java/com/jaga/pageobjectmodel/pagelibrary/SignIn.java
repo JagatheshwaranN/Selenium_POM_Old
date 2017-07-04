@@ -24,16 +24,15 @@ public class SignIn extends Common_Functions {
 	By Greeting = By.xpath(".//*[@id='bodyContent']//*[@class='greetUser']");
 	By SignInError = By.xpath(".//*[@class='messageStackError']//td[1]");
 
-	public void SignInTOAccount(String UserName, String Passwords) throws InvocationTargetException {
+	public void SignInTOAccount(String userName, String password) throws InvocationTargetException {
 
-		String EmailAddress = UserName;
-		String AccPassword = Passwords;
+		
 		String ActualUrl = cf.getTestData("SignInUrl");
 
 		try {
 			logger.info("Before SignIn into Account");
-			cf.enterTextByName(Email, EmailAddress);
-			cf.enterTextByName(Password, AccPassword);
+			cf.enterTextByName(Email, userName);
+			cf.enterTextByName(Password, password);
 			cf.clickById(SignIn);
 			
 			String ExpectedUrl = cf.getCurrentUrl();

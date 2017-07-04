@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Suite">
 
-<!-- <listeners>
-<listener class-name="com.companyname.projectname.customelistener.Listner"></listener>
-</listeners> -->
+	<!-- <listeners>
+		<listener class-name="com.jaga.pageobjectmodel.customlisteners.Listner"></listener>
+	</listeners> -->
 	<test name="CreateAccount">
 		<classes>
 			<class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount" />
@@ -15,4 +15,4 @@
 			<class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn" />
 		</classes>
 	</test>
-</suite> <!-- Suite -->
+</suite> 

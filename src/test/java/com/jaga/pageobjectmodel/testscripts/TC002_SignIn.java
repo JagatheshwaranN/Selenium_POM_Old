@@ -45,13 +45,13 @@ public class TC002_SignIn extends Common_Functions {
 	}
 
 	@Test(dataProvider = "signinData")
-	public void testSignIn(String RunMode, String TestCase, String UserName, String Passwords) throws InterruptedException, IOException {
+	public void testSignIn(String RunMode, String TestCase, String UserName, String Password) throws InterruptedException, IOException {
 		try {
 			if (RunMode.equals("N")) {
 				throw new SkipException("Skipping the test");
 			}
 			sign = new SignIn();
-			sign.SignInTOAccount(UserName, Passwords);
+			sign.SignInTOAccount(UserName, Password);
 
 		} catch (Exception e) {
 			e.printStackTrace();
