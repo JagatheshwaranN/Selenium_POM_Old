@@ -25,7 +25,7 @@ public class Listener extends Common_Functions implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		if (!result.isSuccess()) {
 			String userDirectory = System.getProperty("user.dir");
-			String customLocation = "//src//test//java//com//companyname//projectname//screenshots//";
+			String customLocation = "//src//test//resources//screenshots//failure//";
 			String failureImageFileName = userDirectory + customLocation + new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + "-" + result.getMethod().getMethodName() + ".png";
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
@@ -45,7 +45,7 @@ public class Listener extends Common_Functions implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		if (result.isSuccess()) {
 			String userDirectory = System.getProperty("user.dir");
-			String customLocation = "//src//test//java//com//companyname//projectname//screenshots//";
+			String customLocation = "//src//test//resources//screenshots//success//";
 			String failureImageFileName = userDirectory + customLocation + new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + "-" + result.getMethod().getMethodName() + ".png";
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {

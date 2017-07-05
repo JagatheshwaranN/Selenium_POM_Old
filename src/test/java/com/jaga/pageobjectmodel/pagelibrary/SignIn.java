@@ -26,23 +26,24 @@ public class SignIn extends Common_Functions {
 
 	public void SignInTOAccount(String userName, String password) throws InvocationTargetException {
 
-		
-		String ActualUrl = cf.getTestData("SignInUrl");
+		String ExpectedUrl = cf.getTestData("SignInUrl");
 
 		try {
 			logger.info("Before SignIn into Account");
 			cf.enterTextByName(Email, userName);
 			cf.enterTextByName(Password, password);
 			cf.clickById(SignIn);
-			
-			String ExpectedUrl = cf.getCurrentUrl();
+
+			String ActualUrl = cf.getCurrentUrl();
 
 			if (ActualUrl.contains(ExpectedUrl)) {
-				logger.info("SignIn into Account Successful");
+				logger.info("SignIn into Account is Successful");
+				logger.info(cf.getTextByXpath(Greeting));
 				Assert.assertEquals(ActualUrl, ExpectedUrl);
 
 			} else {
-				logger.info("SignIn into Account Unsuccessful");
+				logger.info("SignIn into Account is Unsuccessful");
+				logger.info(cf.getTextByXpath(SignInError));
 				Assert.assertEquals(ActualUrl, ExpectedUrl);
 
 			}

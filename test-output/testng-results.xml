@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression Suite" duration-ms="228736" started-at="2017-07-04T16:29:49Z" finished-at="2017-07-04T16:33:38Z">
+  <suite name="Default suite" duration-ms="70958" started-at="2017-07-05T16:37:54Z" finished-at="2017-07-05T16:39:05Z">
     <groups>
     </groups>
-    <test name="CreateAccount" duration-ms="166372" started-at="2017-07-04T16:29:49Z" finished-at="2017-07-04T16:32:35Z">
+    <test name="Default test" duration-ms="70958" started-at="2017-07-05T16:37:54Z" finished-at="2017-07-05T16:39:05Z">
       <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="setup" is-config="true" duration-ms="125847" started-at="2017-07-04T21:59:50Z" finished-at="2017-07-04T22:01:56Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="setup" is-config="true" duration-ms="53816" started-at="2017-07-05T22:07:56Z" finished-at="2017-07-05T22:08:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createAccountRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="createAccountRegistration" duration-ms="39382" started-at="2017-07-04T22:01:56Z" data-provider="createAccountData" finished-at="2017-07-04T22:02:35Z">
+        <test-method status="FAIL" signature="createAccountRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="createAccountRegistration" duration-ms="15921" started-at="2017-07-05T22:08:49Z" data-provider="createAccountData" finished-at="2017-07-05T22:09:05Z">
           <params>
             <param index="0">
               <value>
@@ -40,7 +40,7 @@
             </param>
             <param index="5">
               <value>
-                <![CDATA[testjaga006@gmail.com]]>
+                <![CDATA[testjaga007@gmail.com]]>
               </value>
             </param>
             <param index="6">
@@ -89,52 +89,54 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [http://www.gcrit.com/build3/create_account_success.php] but found [http://www.gcrit.com/build3/create_account.php]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [http://www.gcrit.com/build3/create_account_success.php] but found [http://www.gcrit.com/build3/create_account.php]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:71)
+	at com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount.createAccountRegistration(TC001_CreateAccount.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAccountRegistration -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="close" is-config="true" duration-ms="64" started-at="2017-07-04T22:02:35Z" finished-at="2017-07-04T22:02:35Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@1baeedf]" name="close" is-config="true" duration-ms="61" started-at="2017-07-05T22:09:05Z" finished-at="2017-07-05T22:09:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
-    </test> <!-- CreateAccount -->
-    <test name="SignIn" duration-ms="62060" started-at="2017-07-04T16:32:36Z" finished-at="2017-07-04T16:33:38Z">
-      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1a5c39e]" name="setup" is-config="true" duration-ms="36369" started-at="2017-07-04T22:02:36Z" finished-at="2017-07-04T22:03:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1a5c39e]" name="testSignIn" duration-ms="25540" started-at="2017-07-04T22:03:12Z" data-provider="signinData" finished-at="2017-07-04T22:03:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Y]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SignIn]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[testjaga006@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[jaga@12345]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSignIn -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1a5c39e]" name="close" is-config="true" duration-ms="42" started-at="2017-07-04T22:03:38Z" finished-at="2017-07-04T22:03:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
-    </test> <!-- SignIn -->
-  </suite> <!-- Regression Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

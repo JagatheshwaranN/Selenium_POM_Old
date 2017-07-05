@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
+      <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
         <methods>
           <include name="close"/>
-          <include name="testSignIn" invocation-numbers="1"/>
+          <include name="createAccountRegistration" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

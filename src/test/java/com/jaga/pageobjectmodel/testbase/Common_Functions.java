@@ -1224,6 +1224,7 @@ public class Common_Functions {
 	 * 
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
 
 	public void acceptTheAlert() {
@@ -1244,6 +1245,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		
 	}
 
 	/**
@@ -1383,5 +1385,27 @@ public class Common_Functions {
 	public String getCurrentUrl() {
 		String Url = driver.getCurrentUrl();
 		return Url;
+	}
+
+
+public boolean alertPresent() {
+	try {
+		waitFunction();
+		wait.until(ExpectedConditions.alertIsPresent());
+		System.out.println("Alert accepted");
+	} catch (TimeoutException e) {
+		System.err.println("Alert is not present" + e.getMessage());
+		throw new RuntimeException("FAILED");
+	} catch (NoAlertPresentException e) {
+		System.err.println("Exception occured in accepting alert " + e.getMessage());
+		throw new RuntimeException("FAILED");
+	} catch (WebDriverException e) {
+		System.err.println("The Browser could not be found " + e.getMessage());
+		throw new RuntimeException("FAILED");
+	} catch (Exception e) {
+		System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
+		throw new RuntimeException("FAILED");
+	}
+	return false;
 	}
 }
