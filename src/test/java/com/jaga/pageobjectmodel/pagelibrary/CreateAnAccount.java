@@ -1,19 +1,40 @@
+/**
+ *The below class is created to perform CreateAccount Functionality
+ *
+ * @author Jagatheshwaran
+ */
+
+/**
+ *Importing Package
+ */
 package com.jaga.pageobjectmodel.pagelibrary;
 
+/**
+ * Importing the necessary predefined classes
+ */
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.jaga.pageobjectmodel.testbase.Common_Functions;
 
+/**
+ * A class is created with name : CreateAnAccount
+ * CreateAnAccount class extends Common_Functions class to utilize the reusable methods of the Common_Functions class
+ */
 public class CreateAnAccount {
-	static WebDriver driver;
+	
+	/**
+	 * Declaring all the Global variables
+	 */
 	static Logger logger = Logger.getLogger(CreateAnAccount.class.getName());
 	Common_Functions cf = new Common_Functions();
 
+	/**
+	 * Declaring all the Page object locators using By class
+	 */
 	By CreateAccContinueBtn = By.xpath(".//*[@id='tdb4']//*[text()='Continue']");
 	By Male = By.xpath(".//*[@name='gender'][1]");
 	By FirstName = By.name("firstname");
@@ -33,10 +54,16 @@ public class CreateAnAccount {
 	By SuccessMsg = By.xpath("//*[@class='grid_16 push_4']/h1");
 	By AccountCreationError = By.xpath("//*[@class='messageStackError']//td");
 
+	/**
+	 * This method will enter the required Details to create the Account and then click Submit button
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public void createAccountRegistration(String firstName, String lastName, String dateofBirth, String email, String company, String address, String zipcode, String city, String state, String country, String telPhoneNo, String password, String confirmPassword) throws InvocationTargetException {
+		
+		//The Test Data fetched from the property file
 		String ExpectedUrl = cf.getTestData("SuccessUrl");
-		System.out.println(ExpectedUrl);
-
+		
 		try {
 			logger.info("The Registration Details for the Create Account");
 
@@ -56,7 +83,7 @@ public class CreateAnAccount {
 			cf.enterTextByName(Password, password);
 			cf.enterTextByName(ConfirmPassword, confirmPassword);
 			cf.clickById(Submit);
-			System.out.println(cf.getCurrentUrl());
+			
 			String ActualUrl = cf.getCurrentUrl();
 
 			if (ActualUrl.contains(ExpectedUrl)) {

@@ -42,7 +42,7 @@ public class TC001_CreateAccount extends Common_Functions {
 	}
 
 	@Test(dataProvider = "createAccountData")
-	public void createAccountRegistration(String RunMode, String TestCase, String FirstName, String LastName, String DateofBirth, String Email, String Company, String Address, String Zipcode, String City, String State, String Country, String TelPhoneNo, String Password, String ConfirmPassword)
+	public void testcreateAccountRegistration(String RunMode, String TestCase, String FirstName, String LastName, String DateofBirth, String Email, String Company, String Address, String Zipcode, String City, String State, String Country, String TelPhoneNo, String Password, String ConfirmPassword)
 			throws InterruptedException, IOException {
 		try {
 			if (RunMode.equals("N")) {

@@ -1,13 +1,11 @@
+//5/6/2017
 /**
- * Package creation
- * 
- * @author Jagatheshwaran
- * @Date : 5/6/2017
+ * Importing Package 
  */
 package com.jaga.pageobjectmodel.testbase;
 
 /**
- * Importing the necessary classes
+ * Importing the necessary predefined classes
  */
 import java.io.File;
 import java.io.FileInputStream;
@@ -60,7 +58,6 @@ public class Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-
 	public void init() throws IOException {
 
 		loadProperties();
@@ -509,7 +506,6 @@ public class Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-
 	public void verifyTextContainsByName(By name, String text) {
 		try {
 			waitFunction();
@@ -538,7 +534,6 @@ public class Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-
 	public void verifyTextContainsByCssSelector(By cssSelector, String text) {
 		try {
 			waitFunction();
@@ -567,7 +562,6 @@ public class Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-
 	public void verifyTextContainsByClassName(By className, String text) {
 		try {
 			waitFunction();
@@ -596,7 +590,6 @@ public class Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-
 	public void verifyTextContainsByXpath(By xpath, String text) {
 		try {
 			waitFunction();
@@ -1224,9 +1217,8 @@ public class Common_Functions {
 	 * 
 	 * 
 	 * @author Jagatheshwaran
-	 * @return 
+	 * @return
 	 */
-
 	public void acceptTheAlert() {
 		try {
 			waitFunction();
@@ -1245,7 +1237,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
-		
+
 	}
 
 	/**
@@ -1254,7 +1246,6 @@ public class Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-
 	public void dismissTheAlert() {
 		try {
 			waitFunction();
@@ -1281,7 +1272,6 @@ public class Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-
 	public void getTextofAlert() {
 		String text = null;
 		try {
@@ -1303,9 +1293,64 @@ public class Common_Functions {
 			throw new RuntimeException("FAILED");
 		}
 	}
+	
+	/**
+	 * This method will get the Current Url of the page
+	 * 
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public String getCurrentUrl() {
+		String Url = null;
+		try {
+			waitFunction();
+			Url= driver.getCurrentUrl();
+			System.out.println("Current Url Captured");
+		} catch (TimeoutException e) {
+			System.err.println("Current Url is not captured" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (NoAlertPresentException e) {
+			System.err.println("Exception occured in capturing Current Url" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in capturing Current Url:" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}	
+		return Url;
+	}
+	
+	/**
+	 * This method will check the presence of the Alert
+	 * 
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public boolean alertPresent() {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.alertIsPresent());
+			System.out.println("Alert accepted");
+		} catch (TimeoutException e) {
+			System.err.println("Alert is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (NoAlertPresentException e) {
+			System.err.println("Exception occured in accepting alert " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+		return false;
+	}
 
 	/**
-	 * This method will close the current browser window
+	 * This method will close the current Browser Window
 	 * 
 	 * 
 	 * @author Jagatheshwaran
@@ -1327,7 +1372,7 @@ public class Common_Functions {
 	}
 
 	/**
-	 * This method will close all the browser windows
+	 * This method will close all the Browser Windows
 	 * 
 	 * 
 	 * @author Jagatheshwaran
@@ -1381,31 +1426,5 @@ public class Common_Functions {
 		}
 
 	}
-
-	public String getCurrentUrl() {
-		String Url = driver.getCurrentUrl();
-		return Url;
-	}
-
-
-public boolean alertPresent() {
-	try {
-		waitFunction();
-		wait.until(ExpectedConditions.alertIsPresent());
-		System.out.println("Alert accepted");
-	} catch (TimeoutException e) {
-		System.err.println("Alert is not present" + e.getMessage());
-		throw new RuntimeException("FAILED");
-	} catch (NoAlertPresentException e) {
-		System.err.println("Exception occured in accepting alert " + e.getMessage());
-		throw new RuntimeException("FAILED");
-	} catch (WebDriverException e) {
-		System.err.println("The Browser could not be found " + e.getMessage());
-		throw new RuntimeException("FAILED");
-	} catch (Exception e) {
-		System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
-		throw new RuntimeException("FAILED");
-	}
-	return false;
-	}
+	
 }

@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Regression Suite]">
+  <listeners>
+    <listener class-name="com.jaga.pageobjectmodel.customlisteners.Listener"/>
+  </listeners>
+  <test name="CreateAccount(failed)">
     <classes>
       <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
         <methods>
           <include name="close"/>
-          <include name="createAccountRegistration" invocation-numbers="0"/>
+          <include name="testcreateAccountRegistration" invocation-numbers="1"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
+      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
+        <methods>
+          <include name="close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+    </classes>
+  </test> <!-- CreateAccount(failed) -->
+  <test name="SignIn(failed)">
+    <classes>
+      <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
+        <methods>
+          <include name="close"/>
+          <include name="testSignIn" invocation-numbers="1"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+      <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
+        <methods>
+          <include name="close"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- SignIn(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->
