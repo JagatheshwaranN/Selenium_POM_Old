@@ -1,5 +1,17 @@
+/**
+ * The below class is created to listen the Test and capture the screens of the Success or Failure of the Test
+ *
+ * @author Jagatheshwaran
+ */
+
+/**
+ * Importing Package
+ */
 package com.jaga.pageobjectmodel.customlisteners;
 
+/**
+ * Importing the necessary predefined classes
+ */
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -15,13 +27,27 @@ import org.testng.Reporter;
 
 import com.jaga.pageobjectmodel.testbase.Common_Functions;
 
+/**
+ * A class is created with name : Listener
+ * Listener class extends Common_Functions class and implements ITestListener
+ */
 public class Listener extends Common_Functions implements ITestListener {
 
+	/**
+	 * This method will provide the start of the test in TestNG report
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	@SuppressWarnings("static-access")
 	public void onTestStart(ITestResult result) {
 		Reporter.log("Test started running:" + result.getMethod().getMethodName() + " at:" + result.STARTED);
 	}
 
+	/**
+	 * This method will capture the screen shot on the Test Failure
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public void onTestFailure(ITestResult result) {
 		if (!result.isSuccess()) {
 			String userDirectory = System.getProperty("user.dir");
@@ -42,6 +68,11 @@ public class Listener extends Common_Functions implements ITestListener {
 
 	}
 
+	/**
+	 * This method will capture the screen shot on the Test Success
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public void onTestSuccess(ITestResult result) {
 		if (result.isSuccess()) {
 			String userDirectory = System.getProperty("user.dir");

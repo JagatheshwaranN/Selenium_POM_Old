@@ -1,11 +1,11 @@
 /**
- *The below class is created to perform SignIn Functionality
+ * The below class is created to perform SignIn Functionality
  *
  * @author Jagatheshwaran
  */
 
 /**
- *Importing Package
+ * Importing Package
  */
 package com.jaga.pageobjectmodel.pagelibrary;
 
@@ -25,18 +25,23 @@ import com.jaga.pageobjectmodel.testbase.Common_Functions;
 /**
  * A class is created with name : SignIn
  * SignIn class extends Common_Functions class to utilize the reusable methods of the Common_Functions class
+ *
+ * @author Jagatheshwaran
  */
 @SuppressWarnings("unused")
 public class SignIn extends Common_Functions {
 	
 	/**
-	 * Declaring all the Global variables
+	 * Initializing Logger
+	 * Common_Functions class Object reference is initialized
 	 */
 	static Logger logger = Logger.getLogger(SignIn.class.getName());
-	Common_Functions cf = new Common_Functions();
+	Common_Functions cf; 
 	
 	/**
 	 * Declaring all the Page object locators using By class
+	 * 
+	 * @author Jagatheshwaran
 	 */
 	By Email = By.name("email_address");
 	By Password = By.name("password");

@@ -1,11 +1,11 @@
 /**
- *The below class is created to perform CreateAccount Functionality
+ * The below class is created to perform CreateAccount Functionality
  *
  * @author Jagatheshwaran
  */
 
 /**
- *Importing Package
+ * Importing Package
  */
 package com.jaga.pageobjectmodel.pagelibrary;
 
@@ -23,17 +23,22 @@ import com.jaga.pageobjectmodel.testbase.Common_Functions;
 /**
  * A class is created with name : CreateAnAccount
  * CreateAnAccount class extends Common_Functions class to utilize the reusable methods of the Common_Functions class
+ *
+ * @author Jagatheshwaran
  */
 public class CreateAnAccount {
 	
 	/**
-	 * Declaring all the Global variables
+	 * Initializing Logger
+	 * Common_Functions class Object reference is initialized
 	 */
 	static Logger logger = Logger.getLogger(CreateAnAccount.class.getName());
-	Common_Functions cf = new Common_Functions();
+	Common_Functions cf;
 
 	/**
 	 * Declaring all the Page object locators using By class
+	 * 
+	 * @author Jagatheshwaran
 	 */
 	By CreateAccContinueBtn = By.xpath(".//*[@id='tdb4']//*[text()='Continue']");
 	By Male = By.xpath(".//*[@name='gender'][1]");

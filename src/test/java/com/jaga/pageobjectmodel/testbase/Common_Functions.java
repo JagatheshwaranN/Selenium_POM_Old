@@ -1,4 +1,10 @@
-//5/6/2017
+/**
+ *The below class is created to have the common reusable methods and the basic configuration for the Test
+ *
+ * @Date : 05/06/2017
+ * @author Jagatheshwaran
+ */
+
 /**
  * Importing Package 
  */
@@ -39,9 +45,7 @@ import org.testng.Assert;
 public class Common_Functions {
 
 	/**
-	 * Declaring all the Global variables
-	 * 
-	 * @author Jagatheshwaran
+	 * The predefined classes Object references is created and initialized  
 	 */
 	public static Properties Repository = new Properties();
 	public File f;
@@ -53,8 +57,7 @@ public class Common_Functions {
 	public static int indexSI = 1;
 
 	/**
-	 * This method will load the property file,select the browser and launch the
-	 * browser with the URL
+	 * This method will load the property file,select the browser and launch the browser with the URL
 	 * 
 	 * @author Jagatheshwaran
 	 */
@@ -127,7 +130,7 @@ public class Common_Functions {
 	 */
 	public void explicitWait(WebElement element, int timeToWaitInSec) {
 		wait = new WebDriverWait(driver, timeToWaitInSec);
-		// wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.visibilityOf(element));
 
 	}
 
@@ -160,8 +163,7 @@ public class Common_Functions {
 	}
 
 	/**
-	 * This method will wait for the specified time to check visibility of
-	 * WebElements
+	 * This method will wait for the specified time to check visibility of WebElements
 	 * 
 	 * @author Jagatheshwaran
 	 */
@@ -1092,7 +1094,6 @@ public class Common_Functions {
 	/**
 	 * This method will switch to Parent Window
 	 * 
-	 * 
 	 * @author Jagatheshwaran
 	 */
 	public void switchToParentWindow() {
@@ -1155,7 +1156,6 @@ public class Common_Functions {
 	/**
 	 * This method will switch to Last Window
 	 * 
-	 * 
 	 * @author Jagatheshwaran
 	 */
 	public void switchToLastWindow() {
@@ -1182,7 +1182,7 @@ public class Common_Functions {
 	/**
 	 * This method will switch to Last Window
 	 * 
-	 * @param
+	 * @param totalWindowExpected
 	 * 
 	 * @author Jagatheshwaran
 	 */
@@ -1215,9 +1215,7 @@ public class Common_Functions {
 	/**
 	 * This method will handle Alert accept
 	 * 
-	 * 
 	 * @author Jagatheshwaran
-	 * @return
 	 */
 	public void acceptTheAlert() {
 		try {
@@ -1243,7 +1241,6 @@ public class Common_Functions {
 	/**
 	 * This method will handle Alert dismiss
 	 * 
-	 * 
 	 * @author Jagatheshwaran
 	 */
 	public void dismissTheAlert() {
@@ -1268,7 +1265,6 @@ public class Common_Functions {
 
 	/**
 	 * This method will get the text of Alert
-	 * 
 	 * 
 	 * @author Jagatheshwaran
 	 */
@@ -1297,7 +1293,6 @@ public class Common_Functions {
 	/**
 	 * This method will get the Current Url of the page
 	 * 
-	 * 
 	 * @author Jagatheshwaran
 	 */
 	public String getCurrentUrl() {
@@ -1325,7 +1320,6 @@ public class Common_Functions {
 	/**
 	 * This method will check the presence of the Alert
 	 * 
-	 * 
 	 * @author Jagatheshwaran
 	 */
 	public boolean alertPresent() {
@@ -1352,7 +1346,6 @@ public class Common_Functions {
 	/**
 	 * This method will close the current Browser Window
 	 * 
-	 * 
 	 * @author Jagatheshwaran
 	 */
 	public void closeBrowser() {
@@ -1373,7 +1366,6 @@ public class Common_Functions {
 
 	/**
 	 * This method will close all the Browser Windows
-	 * 
 	 * 
 	 * @author Jagatheshwaran
 	 */

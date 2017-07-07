@@ -1,5 +1,17 @@
+/**
+ *The below class is created to read the Data from the Excel file
+ *
+ * @author Jagatheshwaran
+ */
+
+/**
+ *Importing Package
+ */
 package com.jaga.pageobjectmodel.excelreader;
 
+/**
+ * Importing the necessary predefined classes
+ */
 import java.io.FileInputStream;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -8,7 +20,14 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * A class is created with name : Excel_Reader
+ */
 public class Excel_Reader {
+	
+	/**
+	 * The predefined classes Object references is created and initialized  
+	 */
 	public String path;
 	public FileInputStream fis;
 	public XSSFWorkbook workbook;
@@ -16,6 +35,13 @@ public class Excel_Reader {
 	public XSSFRow row;
 	public XSSFCell cell;
 
+	/**
+	 * The constructor is created for the class
+	 * 
+	 * @param path
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public Excel_Reader(String path) {
 		this.path = path;
 		try {
@@ -26,6 +52,15 @@ public class Excel_Reader {
 		}
 	}
 
+	/**
+	 * This method will get the data from the Excel sheet
+	 * 
+	 * @param sheetName
+	 * @param colName
+	 * @param rowNum
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public String getCellData(String sheetName, String colName, int rowNum) {
 		try {
 			int col_Num = 0;
@@ -57,6 +92,15 @@ public class Excel_Reader {
 		return null;
 	}
 
+	/**
+	 * This method will get the data from the Excel sheet
+	 * 
+	 * @param sheetName
+	 * @param colName
+	 * @param rowNum
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public String getCellData(String sheetName, int colName, int rowNum) {
 		try {
 			int index = workbook.getSheetIndex(sheetName);
@@ -81,6 +125,13 @@ public class Excel_Reader {
 		return null;
 	}
 
+	/**
+	 * This method will get the Row count of the Excel sheet
+	 * 
+	 * @param sheetName
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public int getRowCount(String sheetName) {
 		try {
 			int index = workbook.getSheetIndex(sheetName);
@@ -97,6 +148,13 @@ public class Excel_Reader {
 		return 0;
 	}
 
+	/**
+	 * This method will get the Column count of the Excel sheet
+	 * 
+	 * @param sheetName
+	 * 
+	 * @author Jagatheshwaran
+	 */
 	public int getColumnCount(String sheetName) {
 		try {
 			int index = workbook.getSheetIndex(sheetName);
