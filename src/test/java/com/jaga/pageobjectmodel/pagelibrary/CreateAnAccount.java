@@ -30,10 +30,10 @@ public class CreateAnAccount {
 	
 	/**
 	 * Initializing Logger
-	 * Common_Functions class Object reference is initialized
+	 * Common_Functions class Object is initialized
 	 */
 	static Logger logger = Logger.getLogger(CreateAnAccount.class.getName());
-	Common_Functions cf;
+	Common_Functions cf = new Common_Functions();
 
 	/**
 	 * Declaring all the Page object locators using By class

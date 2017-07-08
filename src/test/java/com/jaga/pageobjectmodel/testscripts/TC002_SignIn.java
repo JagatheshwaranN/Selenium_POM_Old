@@ -28,26 +28,25 @@ import com.jaga.pageobjectmodel.pagelibrary.SignIn;
 import com.jaga.pageobjectmodel.testbase.Common_Functions;
 
 /**
- * A class is created with name : TC002_SignIn
- * TC002_SignIn class extends Common_Functions class to utilize the reusable methods of the Common_Functions class
- *
+ * A class is created with name : TC002_SignIn TC002_SignIn class extends
+ * Common_Functions class to utilize the reusable methods of the
+ * Common_Functions class
+ * 
  * @author Jagatheshwaran
  */
 public class TC002_SignIn extends Common_Functions {
 
 	/**
-	 * Initializing Logger
-	 * SignIn class Object reference is initialized
+	 * Initializing Logger SignIn class Object reference is initialized
 	 */
 	static Logger logger = Logger.getLogger(TC002_SignIn.class.getName());
 	SignIn sign;
-
 
 	/**
 	 * This method will used to perform the entry operations of the Test 
 	 * This method will run before each methods under Test
 	 * 
-	 * @author Jagatheshwaran 
+	 * @author Jagatheshwaran
 	 */
 	@BeforeMethod
 	public void setup() throws IOException {
@@ -57,10 +56,11 @@ public class TC002_SignIn extends Common_Functions {
 
 	/**
 	 * This method will used to fetch the data from the Excel sheet
+	 * 
 	 * @param excelName
 	 * @param testcase
 	 * 
-	 * @author Jagatheshwaran 
+	 * @author Jagatheshwaran
 	 */
 	public Object[][] getData(String excelName, String testcase) {
 		Excel_Reader Data = new Excel_Reader(System.getProperty("user.dir") + "//src//test//resources//testdata//" + excelName);
@@ -72,27 +72,31 @@ public class TC002_SignIn extends Common_Functions {
 				sampleData[i - 2][j] = Data.getCellData(testcase, j, i);
 			}
 		}
+
 		return sampleData;
+
 	}
 
 	/**
-	 * This method will used to get the data from Excel sheet and store it in object 
+	 * This method will used to get the data from Excel sheet and store it in object
 	 * 
-	 * @author Jagatheshwaran 
+	 * @author Jagatheshwaran
 	 */
 	@DataProvider
 	public Object[][] signinData() {
 		Object[][] data = getData("TestData.xlsx", "SignIn");
+		
 		return data;
 	}
 
 	/**
 	 * This method will used to perform the Test of SignIn Functionality
 	 * This method will fetch the data for the method from dataProvider
+	 * 
 	 * @param dataProvider
 	 * @param RunMode,TestCase,UserName,Password
 	 * 
-	 * @author Jagatheshwaran 
+	 * @author Jagatheshwaran
 	 */
 	@Test(dataProvider = "signinData")
 	public void testSignIn(String RunMode, String TestCase, String UserName, String Password) throws InterruptedException, IOException {
@@ -100,6 +104,7 @@ public class TC002_SignIn extends Common_Functions {
 			if (RunMode.equals("N")) {
 				throw new SkipException("Skipping the test");
 			}
+
 			sign = new SignIn();
 			sign.SignInTOAccount(UserName, Password);
 
@@ -108,12 +113,12 @@ public class TC002_SignIn extends Common_Functions {
 		}
 
 	}
-	
+
 	/**
 	 * This method will used to perform the exit operations of the Test 
 	 * This method will run after each methods under Test
 	 * 
-	 * @author Jagatheshwaran 
+	 * @author Jagatheshwaran
 	 */
 	@AfterMethod
 	public void close() {

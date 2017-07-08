@@ -5,7 +5,7 @@
       <![CDATA[Test started running:testcreateAccountRegistration at:16]]>
     </line>
     <line>
-      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-26-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-26-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
+      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
     </line>
     <line>
       <![CDATA[testcreateAccountRegistration--Test method failed
@@ -15,7 +15,7 @@
       <![CDATA[Test started running:testcreateAccountRegistration at:16]]>
     </line>
     <line>
-      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-10-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-10-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
+      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-07-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-07-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
     </line>
     <line>
       <![CDATA[testcreateAccountRegistration--Test method failed
@@ -25,7 +25,7 @@
       <![CDATA[Test started running:testSignIn at:16]]>
     </line>
     <line>
-      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-01-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-01-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
+      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
     </line>
     <line>
       <![CDATA[testSignIn--Test method failed
@@ -35,23 +35,23 @@
       <![CDATA[Test started running:testSignIn at:16]]>
     </line>
     <line>
-      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-25-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-25-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
+      <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-00-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-00-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
     </line>
     <line>
       <![CDATA[testSignIn--Test method failed
 ]]>
     </line>
   </reporter-output>
-  <suite name="Regression Suite" duration-ms="171527" started-at="2017-07-06T15:41:34Z" finished-at="2017-07-06T15:44:25Z">
+  <suite name="Regression Suite" duration-ms="141161" started-at="2017-07-08T05:30:39Z" finished-at="2017-07-08T05:33:00Z">
     <groups>
     </groups>
-    <test name="CreateAccount" duration-ms="96778" started-at="2017-07-06T15:41:34Z" finished-at="2017-07-06T15:43:10Z">
+    <test name="CreateAccount" duration-ms="88291" started-at="2017-07-08T05:30:39Z" finished-at="2017-07-08T05:32:07Z">
       <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@67ae56]" name="setup" is-config="true" duration-ms="21615" started-at="2017-07-06T21:11:35Z" finished-at="2017-07-06T21:11:56Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@4f30ec]" name="setup" is-config="true" duration-ms="34076" started-at="2017-07-08T11:00:40Z" finished-at="2017-07-08T11:01:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testcreateAccountRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@67ae56]" name="testcreateAccountRegistration" duration-ms="29601" started-at="2017-07-06T21:11:56Z" data-provider="createAccountData" finished-at="2017-07-06T21:12:26Z">
+        <test-method status="PASS" signature="testcreateAccountRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@4f30ec]" name="testcreateAccountRegistration" duration-ms="21800" started-at="2017-07-08T11:01:14Z" data-provider="createAccountData" finished-at="2017-07-08T11:01:36Z">
           <params>
             <param index="0">
               <value>
@@ -80,7 +80,7 @@
             </param>
             <param index="5">
               <value>
-                <![CDATA[testjaga6717@gmail.com]]>
+                <![CDATA[testjaga8717@gmail.com]]>
               </value>
             </param>
             <param index="6">
@@ -131,19 +131,19 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-26-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-26-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
+              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
             </line>
           </reporter-output>
         </test-method> <!-- testcreateAccountRegistration -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@67ae56]" name="close" is-config="true" duration-ms="34" started-at="2017-07-06T21:12:26Z" finished-at="2017-07-06T21:12:26Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@4f30ec]" name="close" is-config="true" duration-ms="92" started-at="2017-07-08T11:01:36Z" finished-at="2017-07-08T11:01:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@67ae56]" name="setup" is-config="true" duration-ms="25981" started-at="2017-07-06T21:12:26Z" finished-at="2017-07-06T21:12:52Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@4f30ec]" name="setup" is-config="true" duration-ms="16897" started-at="2017-07-08T11:01:36Z" finished-at="2017-07-08T11:01:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="testcreateAccountRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@67ae56]" name="testcreateAccountRegistration" duration-ms="17838" started-at="2017-07-06T21:12:52Z" data-provider="createAccountData" finished-at="2017-07-06T21:13:10Z">
+        <test-method status="FAIL" signature="testcreateAccountRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@4f30ec]" name="testcreateAccountRegistration" duration-ms="13172" started-at="2017-07-08T11:01:53Z" data-provider="createAccountData" finished-at="2017-07-08T11:02:06Z">
           <params>
             <param index="0">
               <value>
@@ -172,7 +172,7 @@
             </param>
             <param index="5">
               <value>
-                <![CDATA[testjaga6717@gmail.com]]>
+                <![CDATA[testjaga8717@gmail.com]]>
               </value>
             </param>
             <param index="6">
@@ -232,8 +232,8 @@
 	at org.testng.Assert.assertEquals(Assert.java:123)
 	at org.testng.Assert.assertEquals(Assert.java:176)
 	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:70)
-	at com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount.testcreateAccountRegistration(TC001_CreateAccount.java:52)
+	at com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:102)
+	at com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount.testcreateAccountRegistration(TC001_CreateAccount.java:101)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -263,23 +263,23 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
-              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-10-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-10-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
+              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-07-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-07-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br />]]>
             </line>
           </reporter-output>
         </test-method> <!-- testcreateAccountRegistration -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@67ae56]" name="close" is-config="true" duration-ms="34" started-at="2017-07-06T21:13:10Z" finished-at="2017-07-06T21:13:10Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount@4f30ec]" name="close" is-config="true" duration-ms="29" started-at="2017-07-08T11:02:07Z" finished-at="2017-07-08T11:02:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
     </test> <!-- CreateAccount -->
-    <test name="SignIn" duration-ms="74626" started-at="2017-07-06T15:43:10Z" finished-at="2017-07-06T15:44:25Z">
+    <test name="SignIn" duration-ms="52689" started-at="2017-07-08T05:32:07Z" finished-at="2017-07-08T05:33:00Z">
       <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@d818d1]" name="setup" is-config="true" duration-ms="36549" started-at="2017-07-06T21:13:11Z" finished-at="2017-07-06T21:13:47Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1494225]" name="setup" is-config="true" duration-ms="19898" started-at="2017-07-08T11:02:07Z" finished-at="2017-07-08T11:02:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@d818d1]" name="testSignIn" duration-ms="14102" started-at="2017-07-06T21:13:47Z" data-provider="signinData" finished-at="2017-07-06T21:14:01Z">
+        <test-method status="PASS" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1494225]" name="testSignIn" duration-ms="9075" started-at="2017-07-08T11:02:27Z" data-provider="signinData" finished-at="2017-07-08T11:02:36Z">
           <params>
             <param index="0">
               <value>
@@ -293,7 +293,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[testjaga6717@gmail.com]]>
+                <![CDATA[testjaga8717@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -304,19 +304,19 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-01-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-06-2017_21-01-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
+              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-08-2017_11-36-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
             </line>
           </reporter-output>
         </test-method> <!-- testSignIn -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@d818d1]" name="close" is-config="true" duration-ms="68" started-at="2017-07-06T21:14:01Z" finished-at="2017-07-06T21:14:02Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1494225]" name="close" is-config="true" duration-ms="29" started-at="2017-07-08T11:02:37Z" finished-at="2017-07-08T11:02:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@d818d1]" name="setup" is-config="true" duration-ms="19115" started-at="2017-07-06T21:14:02Z" finished-at="2017-07-06T21:14:21Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1494225]" name="setup" is-config="true" duration-ms="18667" started-at="2017-07-08T11:02:37Z" finished-at="2017-07-08T11:02:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@d818d1]" name="testSignIn" duration-ms="4154" started-at="2017-07-06T21:14:21Z" data-provider="signinData" finished-at="2017-07-06T21:14:25Z">
+        <test-method status="FAIL" signature="testSignIn(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1494225]" name="testSignIn" duration-ms="4465" started-at="2017-07-08T11:02:55Z" data-provider="signinData" finished-at="2017-07-08T11:03:00Z">
           <params>
             <param index="0">
               <value>
@@ -330,7 +330,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[testjaga6717@gmail.com]]>
+                <![CDATA[testjaga8717@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -341,17 +341,17 @@
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [http://www.gcrit.com/build3/index.php] but found [http://www.gcrit.com/build3/login.php?action=process&osCsid=mc2cke02entdbn88mna5qndgj3]]]>
+              <![CDATA[expected [http://www.gcrit.com/build3/index.php] but found [http://www.gcrit.com/build3/login.php?action=process&osCsid=pt4flksdgj845vh2sgite3s7e4]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [http://www.gcrit.com/build3/index.php] but found [http://www.gcrit.com/build3/login.php?action=process&osCsid=mc2cke02entdbn88mna5qndgj3]
+              <![CDATA[java.lang.AssertionError: expected [http://www.gcrit.com/build3/index.php] but found [http://www.gcrit.com/build3/login.php?action=process&osCsid=pt4flksdgj845vh2sgite3s7e4]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
 	at org.testng.Assert.assertEquals(Assert.java:123)
 	at org.testng.Assert.assertEquals(Assert.java:176)
 	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.jaga.pageobjectmodel.pagelibrary.SignIn.SignInTOAccount(SignIn.java:55)
-	at com.jaga.pageobjectmodel.testscripts.TC002_SignIn.testSignIn(TC002_SignIn.java:54)
+	at com.jaga.pageobjectmodel.pagelibrary.SignIn.SignInTOAccount(SignIn.java:80)
+	at com.jaga.pageobjectmodel.testscripts.TC002_SignIn.testSignIn(TC002_SignIn.java:109)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -381,11 +381,11 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
-              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-25-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-06-2017_21-25-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
+              <![CDATA[<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-00-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//failure//07-08-2017_11-00-testSignIn.png" alt=""height='100' width='100'/> <br />]]>
             </line>
           </reporter-output>
         </test-method> <!-- testSignIn -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@d818d1]" name="close" is-config="true" duration-ms="45" started-at="2017-07-06T21:14:25Z" finished-at="2017-07-06T21:14:25Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.jaga.pageobjectmodel.testscripts.TC002_SignIn@1494225]" name="close" is-config="true" duration-ms="27" started-at="2017-07-08T11:03:00Z" finished-at="2017-07-08T11:03:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

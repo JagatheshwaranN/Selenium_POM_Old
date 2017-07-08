@@ -23,6 +23,12 @@
   </test> <!-- CreateAccount(failed) -->
   <test name="SignIn(failed)">
     <classes>
+      <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
+        <methods>
+          <include name="close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
       <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
         <methods>
           <include name="close"/>
@@ -30,12 +36,6 @@
           <include name="setup"/>
         </methods>
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
-      <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
-        <methods>
-          <include name="close"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
     </classes>
   </test> <!-- SignIn(failed) -->
 </suite> <!-- Failed suite [Regression Suite] -->

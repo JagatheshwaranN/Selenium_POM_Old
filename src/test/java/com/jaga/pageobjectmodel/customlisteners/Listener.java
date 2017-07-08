@@ -44,7 +44,7 @@ public class Listener extends Common_Functions implements ITestListener {
 	}
 
 	/**
-	 * This method will capture the screen shot on the Test Failure
+	 * This method will capture the screen shot on Test Failure
 	 * 
 	 * @author Jagatheshwaran
 	 */
@@ -69,7 +69,7 @@ public class Listener extends Common_Functions implements ITestListener {
 	}
 
 	/**
-	 * This method will capture the screen shot on the Test Success
+	 * This method will capture the screen shot on Test Success
 	 * 
 	 * @author Jagatheshwaran
 	 */

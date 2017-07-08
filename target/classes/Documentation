@@ -1,0 +1,70 @@
+
+Selenium PageObjectModel Framework
++++++++++++++++++++++++++++++++++++
+
+* The Selenium PageObjectModel Framework is developed to automate the testing of Web Based Applications.
+
+* The Framework is a basic sample for learners to learn automation of Web Based Applications using PageObjectModel.
+
+* The Framework is a combination of (Selenium + PageObjectModel + TestNG).
+
+* The Framework is a Maven project setup which has 4 packages as,
+
+	Main
+		1.Java	
+		2.Resoure
+	Test
+		3.Java
+		4.Resoure
+		
+* The packages used for the Framework is,
+
+	Main
+		Resoure
+	Test
+		Java
+		Resoure
+		
+* The Main -> Resoure package has Browser Drivers.
+
+* The Test -> Java package has the Framework's Major components as follows,
+		
+* The Framework has 6 major components as follows,
+
+	1.com.jaga.pageobjectmodel.config
+	2.com.jaga.pageobjectmodel.customlisteners
+	3.com.jaga.pageobjectmodel.excelreader
+	4.com.jaga.pageobjectmodel.pagelibrary
+	5.com.jaga.pageobjectmodel.testbase
+	6.com.jaga.pageobjectmodel.testscripts
+	
+* The config component will deal with the Property file.
+
+* The customlisteners component will deal with the listening of Test and capture Screenshots.
+
+* The excelreader component will deal with the reading Data from excel sheet.
+
+* The pagelibrary component will deal with the pages of the Application under Test.
+
+* The testbase component will deal with the basic initialization of Test and common reusble methods.
+
+* The testscripts will deal with the testing of the Application under Test.
+
+* The Test -> Resoure package has TestData,Screenshots.
+
+* The PageObjects are maintained in the respective pages using By class.
+
+* The Data taken from excel sheet is injected into the test methods by DataProvider.
+
+* The Logger is used in the Framework to capture logs and to print on the console.
+
+* The Framework uses the default TestNG reports.
+
+* The Framework is Developed by JAGATHESHWARAN N, Automation Test Engineer.
+
+
+
+******************************************************** The End ********************************************************
+
+
+	

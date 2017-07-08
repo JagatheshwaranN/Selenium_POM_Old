@@ -21,6 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -39,6 +40,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+
 /**
  * A class is created with name : Common_Functionalities
  */
@@ -47,6 +49,7 @@ public class Common_Functions {
 	/**
 	 * The predefined classes Object references is created and initialized  
 	 */
+	static Logger logger = Logger.getLogger(Common_Functions.class.getName());
 	public static Properties Repository = new Properties();
 	public File f;
 	public FileInputStream FI;
@@ -93,17 +96,17 @@ public class Common_Functions {
 	public WebDriver selectBrowser(String browser) {
 		try {
 			if (browser.equals("FIREFOX") || browser.equals("firefox")) {
-				System.setProperty("webdriver.firefox.marionette", "E:/ECLIPSE ENV//SELENIUM LIBS//geckodriver.exe");
+				System.setProperty("webdriver.firefox.marionette", "System.getProperty('user.dir')+//src//main//resources//Drivers//geckodriver.exe");
 				driver = new FirefoxDriver();
 				driver.manage().window().maximize();
 				return driver;
 			} else if (browser.equals("CHROME") || browser.equals("chrome")) {
-				System.getProperty("webdriver.chrome.driver", "");
+				System.getProperty("webdriver.chrome.driver","System.getProperty('user.dir')+//src//main//resources//Drivers//chromedriver.exe");
 				driver = new ChromeDriver();
 				driver.manage().window().maximize();
 				return driver;
 			} else if (browser.equals("IE") || browser.equals("ie")) {
-				System.getProperty("webdriver.ie.driver", "");
+				System.getProperty("webdriver.ie.driver", "System.getProperty('user.dir')+//src//main//resources//Drivers//iedriver.exe");
 				driver = new InternetExplorerDriver();
 				driver.manage().window().maximize();
 				return driver;
@@ -211,7 +214,7 @@ public class Common_Functions {
 			waitFunction();
 			wait.until(ExpectedConditions.presenceOfElementLocated(name)).clear();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name)).sendKeys(data);
-			System.out.println("The value " + data + " is entered at element " + name);
+			System.out.println("The value " + data + " is entered at element " + name);			
 		} catch (TimeoutException e) {
 			System.err.println("The element with name :" + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");

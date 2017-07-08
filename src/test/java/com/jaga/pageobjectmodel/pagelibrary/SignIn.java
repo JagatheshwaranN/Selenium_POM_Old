@@ -33,10 +33,10 @@ public class SignIn extends Common_Functions {
 	
 	/**
 	 * Initializing Logger
-	 * Common_Functions class Object reference is initialized
+	 * Common_Functions class Object is initialized
 	 */
 	static Logger logger = Logger.getLogger(SignIn.class.getName());
-	Common_Functions cf; 
+	Common_Functions cf = new Common_Functions(); 
 	
 	/**
 	 * Declaring all the Page object locators using By class
@@ -54,15 +54,17 @@ public class SignIn extends Common_Functions {
 	 * 
 	 * @author Jagatheshwaran
 	 */
-	public void SignInTOAccount(String userName, String password) throws InvocationTargetException {
+	public void SignInTOAccount(String userName, String passWord) throws InvocationTargetException {
 
+		
 		//The Test Data fetched from the property file
 		String ExpectedUrl = cf.getTestData("SignInUrl");
+		
 
 		try {
 			logger.info("Before SignIn into Account");
 			cf.enterTextByName(Email, userName);
-			cf.enterTextByName(Password, password);
+			cf.enterTextByName(Password, passWord);
 			cf.clickById(SignIn);
 
 			String ActualUrl = cf.getCurrentUrl();
