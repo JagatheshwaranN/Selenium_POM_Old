@@ -18,6 +18,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -34,6 +35,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.lift.match.DisplayedMatcher;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -306,6 +308,54 @@ public class Common_Functions {
 			System.err.println("Unexpected exception occured in entering value" + data + " into element with xpath : " + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+
+	}
+	
+	/**
+	 * This method will get the Current Url of the page
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public String getUrl() {
+		String Url = null;
+		try {
+			waitFunction();
+			Url= driver.getCurrentUrl();
+			System.out.println("Current Url is captured");
+		} catch (TimeoutException e) {
+			System.err.println("Current Url is not captured" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in capturing Current Url:" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}	
+		return Url;
+	}
+	
+	/**
+	 * This method will verify the URL
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public boolean verifyUrl(String url) {
+		try {
+			waitFunction();
+			if (wait.until(ExpectedConditions.urlToBe(url)))
+				System.out.println("Actual Url is matched with expected url");
+			else
+				System.out.println("Actual Url doesnot matches with expected url");
+
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception occured in verifying Url with expected url :" + url + " \n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+		return true;
 
 	}
 
@@ -1294,58 +1344,598 @@ public class Common_Functions {
 	}
 	
 	/**
-	 * This method will get the Current Url of the page
+	 * This method will handle the presence of the Alert
 	 * 
 	 * @author Jagatheshwaran
 	 */
-	public String getCurrentUrl() {
-		String Url = null;
-		try {
-			waitFunction();
-			Url= driver.getCurrentUrl();
-			System.out.println("Current Url Captured");
-		} catch (TimeoutException e) {
-			System.err.println("Current Url is not captured" + e.getMessage());
-			throw new RuntimeException("FAILED");
-		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in capturing Current Url" + e.getMessage());
-			throw new RuntimeException("FAILED");
-		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
-			throw new RuntimeException("FAILED");
-		} catch (Exception e) {
-			System.err.println("Unexpected exception in capturing Current Url:" + e.getMessage());
-			throw new RuntimeException("FAILED");
-		}	
-		return Url;
-	}
-	
-	/**
-	 * This method will check the presence of the Alert
-	 * 
-	 * @author Jagatheshwaran
-	 */
-	public boolean alertPresent() {
+	public boolean verifyAlertPresent() {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.alertIsPresent());
-			System.out.println("Alert accepted");
+			System.out.println("Alert is present");
 		} catch (TimeoutException e) {
 			System.err.println("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in accepting alert " + e.getMessage());
+			System.err.println("Exception occured in verifying alert presence " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
 			System.err.println("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
+			System.err.println("Unexpected exception in verifying presence of alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return false;
 	}
 
+	/**
+	 * This method will switch to the Alert
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public boolean switchToAlert() {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.alertIsPresent());
+			driver.switchTo().alert();
+			System.out.println("Switch to alert");
+		} catch (TimeoutException e) {
+			System.err.println("Alert is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (NoAlertPresentException e) {
+			System.err.println("Exception occured in switching to alert " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in switching to alert:" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+		return false;
+	}
+	
+	/**
+	 * This method will send the Text to Alert and Accept
+	 * 
+	 * @param text
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void sendTextToAlertAndAccept(String text) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.alertIsPresent()).sendKeys(text);	
+			wait.until(ExpectedConditions.alertIsPresent()).accept();	
+			System.out.println("Text is sent to alert and accepted");
+		} catch (TimeoutException e) {
+			System.err.println("Alert is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (NoAlertPresentException e) {
+			System.err.println("Exception occured in sending text to alert and accept" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in sending text to alert and accept:" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	
+	}
+	
+	/**
+	 * This method will send the Text to Alert and Dismiss
+	 * 
+	 * @param text
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void sendTextToAlertAndDismiss(String text) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.alertIsPresent()).sendKeys(text);	
+			wait.until(ExpectedConditions.alertIsPresent()).dismiss();	
+			System.out.println("Text is sent to alert and dismissed");
+		} catch (TimeoutException e) {
+			System.err.println("Alert is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (NoAlertPresentException e) {
+			System.err.println("Exception occured in sending text to alert and dismiss" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in sending text to alert and dismiss:" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	
+	}
+
+	/**
+	 * This method will check whether the element is Enabled or not by Id
+	 * 
+	 * @param id 
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isEnabledById(By id) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
+			driver.findElement(id).isEnabled();
+			System.out.println("Element is Enabled");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is enabled:" + id + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Enabled or not by Name
+	 * 
+	 * @param name
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isEnabledByName(By name) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
+			driver.findElement(name).isEnabled();
+			System.out.println("Element is Enabled");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is enabled:" + name + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Enabled or not by CssSelector
+	 * 
+	 * @param cssSelector
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isEnabledByCssSelector(By cssSelector) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
+			driver.findElement(cssSelector).isEnabled();
+			System.out.println("Element is Enabled");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is enabled:" + cssSelector + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+	
+	/**
+	 * This method will check whether the element is Enabled or not by Xpath
+	 * 
+	 * @param xpath
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isEnabledByXpath(By xpath) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+			driver.findElement(xpath).isEnabled();
+			System.out.println("Element is Enabled");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is enabled:" + xpath + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Displayed or not by Id
+	 * 
+	 * @param id 
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isDisplayedById(By id) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
+			driver.findElement(id).isDisplayed();
+			System.out.println("Element is Displayed");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is displayed:" + id + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Displayed or not by Name
+	 * 
+	 * @param name
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isDisplayedByName(By name) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
+			driver.findElement(name).isDisplayed();
+			System.out.println("Element is Displayed");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is displayed:" + name + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Displayed or not by CssSelector
+	 * 
+	 * @param cssSelector
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isDisplayedByCssSelector(By cssSelector) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
+			driver.findElement(cssSelector).isDisplayed();
+			System.out.println("Element is Displayed");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is displayed:" + cssSelector + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+	
+	/**
+	 * This method will check whether the element is Displayed or not by Xpath
+	 * 
+	 * @param xpath
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isDisplayedByXpath(By xpath) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+			driver.findElement(xpath).isDisplayed();
+			System.out.println("Element is Displayed");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is displayed:" + xpath + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Checked or not by Id
+	 * 
+	 * @param id 
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isCheckedById(By id) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
+			driver.findElement(id).isSelected();
+			System.out.println("Element is Checked");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is checked:" + id + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Checked or not by Name
+	 * 
+	 * @param name
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isCheckedByName(By name) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
+			driver.findElement(name).isSelected();
+			System.out.println("Element is Checked");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is checked:" + name + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will check whether the element is Checked or not by CssSelector
+	 * 
+	 * @param cssSelector
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isCheckedByCssSelector(By cssSelector) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
+			driver.findElement(cssSelector).isSelected();
+			System.out.println("Element is Checked");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is checked:" + cssSelector + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+	
+	/**
+	 * This method will check whether the element is Checked or not by Xpath
+	 * 
+	 * @param xpath
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void isCheckedByXpath(By xpath) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+			driver.findElement(xpath).isSelected();
+			System.out.println("Element is Checked");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in verifying the element is checked:" + xpath + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will get the List of  Web Elements by Id
+	 * 
+	 * @param id
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public List<WebElement> getListofElementsById(By id) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
+			driver.findElements(id);
+			System.out.println("Retrieved List of Web Elements");
+		} catch (TimeoutException e) {
+			System.err.println("Elements is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in retrieving list of web elements:" + id + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+		return null;
+	}
+
+	/**
+	 * This method will get the List of  Web Elements by CssSelector 
+	 * 
+	 * @param cssSelector
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public List<WebElement> getListofElementsByCssSelector(By cssSelector) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
+			driver.findElements(cssSelector);
+			System.out.println("Retrieved List of Web Elements");
+		} catch (TimeoutException e) {
+			System.err.println("Elements is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in retrieving list of web elements:" + cssSelector + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+		return null;
+	}
+
+	/**
+	 * This method will get the List of  Web Elements by Xpath 
+	 * 
+	 * @param xpath
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public List<WebElement> getListofElementsByXpath(By xpath) {
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+			driver.findElements(xpath);
+			System.out.println("Retrieved List of Web Elements");
+		} catch (TimeoutException e) {
+			System.err.println("Elements is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in retrieving list of web elements:" + xpath + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+		return null;
+	}
+
+	/**
+	 * This method will switch to Frame by Id
+	 * 
+	 * @param id
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void switchToFrameById(By id)
+	{
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
+			driver.switchTo().frame(driver.findElement(id));
+			System.out.println("Switch to Frame");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in switching to frame:" + id + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+	
+	/**
+	 * This method will switch to Frame by Name
+	 * 
+	 * @param id
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void switchToFrameByName(By name)
+	{
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
+			driver.switchTo().frame(driver.findElement(name));
+			System.out.println("Switch to Frame");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in switching to frame:" + name + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+	
+	/**
+	 * This method will switch to Frame by Id
+	 * 
+	 * @param id
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void switchToFrameByCssSelector(By cssSelector)
+	{
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
+			driver.switchTo().frame(driver.findElement(cssSelector));
+			System.out.println("Switch to Frame");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in switching to frame:" + cssSelector + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+
+	/**
+	 * This method will switch to Frame by Xpath
+	 * 
+	 * @param id
+	 * 
+	 * @author Jagatheshwaran
+	 */
+	public void switchToFrameByXpath(By xpath)
+	{
+		try {
+			waitFunction();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+			driver.switchTo().frame(driver.findElement(xpath));
+			System.out.println("Switch to Frame");
+		} catch (TimeoutException e) {
+			System.err.println("Element is not present" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (WebDriverException e) {
+			System.err.println("The Browser could not be found " + e.getMessage());
+			throw new RuntimeException("FAILED");
+		} catch (Exception e) {
+			System.err.println("Unexpected exception in switching to frame:" + xpath + "\n" + e.getMessage());
+			throw new RuntimeException("FAILED");
+		}
+	}
+	
 	/**
 	 * This method will close the current Browser Window
 	 * 

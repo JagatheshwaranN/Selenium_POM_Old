@@ -89,7 +89,7 @@ public class CreateAnAccount {
 			cf.enterTextByName(ConfirmPassword, confirmPassword);
 			cf.clickById(Submit);
 			
-			String ActualUrl = cf.getCurrentUrl();
+			String ActualUrl = cf.getUrl();
 
 			if (ActualUrl.contains(ExpectedUrl)) {
 				logger.info("The Account has been Registered and Created Successfully");

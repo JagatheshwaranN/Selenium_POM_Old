@@ -67,7 +67,7 @@ public class SignIn extends Common_Functions {
 			cf.enterTextByName(Password, passWord);
 			cf.clickById(SignIn);
 
-			String ActualUrl = cf.getCurrentUrl();
+			String ActualUrl = cf.getUrl();
 
 			if (ActualUrl.contains(ExpectedUrl)) {
 				logger.info("SignIn into Account is Successful");
