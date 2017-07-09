@@ -23,7 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  * A class is created with name : Excel_Reader
  */
-public class Excel_Reader {
+public class Excel_Reader implements Excel_Functions{
 	
 	/**
 	 * The predefined classes Object references is created and initialized  

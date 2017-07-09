@@ -1,5 +1,5 @@
 /**
- *The below class is created to have the common reusable methods and the basic configuration for the Test
+ * The below class is created to have the common reusable methods and the basic configuration for the Test
  *
  * @Date : 05/06/2017
  * @author Jagatheshwaran
@@ -35,7 +35,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.lift.match.DisplayedMatcher;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -44,9 +43,9 @@ import org.testng.Assert;
 
 
 /**
- * A class is created with name : Common_Functionalities
+ * A class is created with name : Common_Functions
  */
-public class Common_Functions {
+public class Common_Functions implements Functions{
 
 	/**
 	 * The predefined classes Object references is created and initialized  
@@ -1460,8 +1459,9 @@ public class Common_Functions {
 	 * @param id 
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isEnabledById(By id) {
+	public boolean isEnabledById(By id) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
@@ -1477,6 +1477,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is enabled:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1485,8 +1486,9 @@ public class Common_Functions {
 	 * @param name
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isEnabledByName(By name) {
+	public boolean isEnabledByName(By name) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
@@ -1502,6 +1504,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is enabled:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1510,8 +1513,9 @@ public class Common_Functions {
 	 * @param cssSelector
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isEnabledByCssSelector(By cssSelector) {
+	public boolean isEnabledByCssSelector(By cssSelector) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
@@ -1527,6 +1531,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is enabled:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 	
 	/**
@@ -1535,8 +1540,9 @@ public class Common_Functions {
 	 * @param xpath
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isEnabledByXpath(By xpath) {
+	public boolean isEnabledByXpath(By xpath) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
@@ -1552,6 +1558,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is enabled:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1560,8 +1567,9 @@ public class Common_Functions {
 	 * @param id 
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isDisplayedById(By id) {
+	public boolean isDisplayedById(By id) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
@@ -1577,6 +1585,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is displayed:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1585,8 +1594,9 @@ public class Common_Functions {
 	 * @param name
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isDisplayedByName(By name) {
+	public boolean isDisplayedByName(By name) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
@@ -1602,6 +1612,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is displayed:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1610,8 +1621,9 @@ public class Common_Functions {
 	 * @param cssSelector
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isDisplayedByCssSelector(By cssSelector) {
+	public boolean isDisplayedByCssSelector(By cssSelector) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
@@ -1627,6 +1639,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is displayed:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 	
 	/**
@@ -1635,8 +1648,9 @@ public class Common_Functions {
 	 * @param xpath
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isDisplayedByXpath(By xpath) {
+	public boolean isDisplayedByXpath(By xpath) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
@@ -1652,6 +1666,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is displayed:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1660,8 +1675,9 @@ public class Common_Functions {
 	 * @param id 
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isCheckedById(By id) {
+	public boolean isCheckedById(By id) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
@@ -1677,6 +1693,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is checked:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1685,8 +1702,9 @@ public class Common_Functions {
 	 * @param name
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isCheckedByName(By name) {
+	public boolean isCheckedByName(By name) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
@@ -1702,6 +1720,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is checked:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1710,8 +1729,9 @@ public class Common_Functions {
 	 * @param cssSelector
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isCheckedByCssSelector(By cssSelector) {
+	public boolean isCheckedByCssSelector(By cssSelector) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
@@ -1727,6 +1747,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is checked:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 	
 	/**
@@ -1735,8 +1756,9 @@ public class Common_Functions {
 	 * @param xpath
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
-	public void isCheckedByXpath(By xpath) {
+	public boolean isCheckedByXpath(By xpath) {
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
@@ -1752,6 +1774,7 @@ public class Common_Functions {
 			System.err.println("Unexpected exception in verifying the element is checked:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
+		return true;
 	}
 
 	/**
@@ -1981,7 +2004,7 @@ public class Common_Functions {
 	/**
 	 * This method will fetch the Test Data from the Property file
 	 * 
-	 * @param Property
+	 * @param property
 	 * 
 	 * @author Jagatheshwaran
 	 */
@@ -2011,5 +2034,5 @@ public class Common_Functions {
 		}
 
 	}
-	
+
 }
