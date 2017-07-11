@@ -58,14 +58,14 @@ public class TC001_CreateAccount extends Common_Functions {
 	 * 
 	 * @author Jagatheshwaran 
 	 */
-	public Object[][] getData(String excelName, String testcase) {
+	public Object[][] getData(String excelName, String sheet) {
 		Excel_Reader Data = new Excel_Reader(System.getProperty("user.dir") + "//src//test//resources//testdata//" + excelName);
-		int rowNum = Data.getRowCount(testcase);
-		int colNum = Data.getColumnCount(testcase);
+		int rowNum = Data.getRowCount(sheet);
+		int colNum = Data.getColumnCount(sheet);
 		Object sampleData[][] = new Object[rowNum - 1][colNum];
 		for (int i = 2; i <= rowNum; i++) {
 			for (int j = 0; j < colNum; j++) {
-				sampleData[i - 2][j] = Data.getCellData(testcase, j, i);
+				sampleData[i - 2][j] = Data.getCellData(sheet, j, i);
 			}
 		}
 		return sampleData;
