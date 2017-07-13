@@ -1,0 +1,208 @@
+2017-07-13 21:46:00,194 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 21:46:00,200 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 21:46:00,201 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 21:46:00,799 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:02,488 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:02,805 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value John is entered at element By.name: firstname
+2017-07-13 21:46:03,042 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Smith is entered at element By.name: lastname
+2017-07-13 21:46:03,465 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 08/29/1993 is entered at element By.id: dob
+2017-07-13 21:46:04,019 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 21:46:04,272 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Software Company  is entered at element By.name: company
+2017-07-13 21:46:04,527 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Sholinganallur is entered at element By.name: street_address
+2017-07-13 21:46:04,804 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 600119.0 is entered at element By.name: postcode
+2017-07-13 21:46:05,028 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Chennai is entered at element By.name: city
+2017-07-13 21:46:05,308 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Tamil Nadu is entered at element By.name: state
+2017-07-13 21:46:05,840 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - DropDown option India is selected at element By.name: country
+2017-07-13 21:46:06,118 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 9.878653421E9 is entered at element By.name: telephone
+2017-07-13 21:46:06,383 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 21:46:06,628 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: confirmation
+2017-07-13 21:46:08,789 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:08,790 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - After Create Account
+2017-07-13 21:46:08,836 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 21:46:08,836 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Account has been Registered and Created Successfully
+2017-07-13 21:46:08,962 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text Your Account Has Been Created!
+2017-07-13 21:46:08,962 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Your Account Has Been Created!
+2017-07-13 21:46:09,193 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 21:46:21,445 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 21:46:21,446 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 21:46:21,446 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 21:46:21,888 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:23,780 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:24,092 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Jack is entered at element By.name: firstname
+2017-07-13 21:46:24,446 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Son is entered at element By.name: lastname
+2017-07-13 21:46:25,240 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 08/30/1993 is entered at element By.id: dob
+2017-07-13 21:46:25,534 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 21:46:25,810 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Software Company  is entered at element By.name: company
+2017-07-13 21:46:26,124 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Siruseri is entered at element By.name: street_address
+2017-07-13 21:46:26,361 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 600120.0 is entered at element By.name: postcode
+2017-07-13 21:46:26,616 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Chennai is entered at element By.name: city
+2017-07-13 21:46:26,858 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Tamil Nadu is entered at element By.name: state
+2017-07-13 21:46:27,407 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - DropDown option India is selected at element By.name: country
+2017-07-13 21:46:27,711 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 9.876543211E9 is entered at element By.name: telephone
+2017-07-13 21:46:27,980 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 21:46:28,238 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: confirmation
+2017-07-13 21:46:29,865 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:29,865 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - After Create Account
+2017-07-13 21:46:29,907 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 21:46:29,907 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Account has not been Registered and Created Successfully
+2017-07-13 21:46:30,062 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 21:46:30,062 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount -  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 21:46:30,297 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 21:46:41,759 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/index.php
+2017-07-13 21:46:41,760 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn - Before SignIn into Account
+2017-07-13 21:46:42,184 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 21:46:42,607 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 21:46:44,899 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:44,899 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn - After SignIn into Account
+2017-07-13 21:46:44,947 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 21:46:44,948 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn - SignIn into Account is Successful
+2017-07-13 21:46:45,096 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text John!
+2017-07-13 21:46:45,096 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn - John!
+2017-07-13 21:46:45,321 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 21:46:56,027 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/index.php
+2017-07-13 21:46:56,028 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn - Before SignIn into Account
+2017-07-13 21:46:56,396 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 21:46:56,770 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@1234 is entered at element By.name: password
+2017-07-13 21:46:58,190 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:46:58,191 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn - After SignIn into Account
+2017-07-13 21:46:58,230 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 21:46:58,230 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn - SignIn into Account is Unsuccessful
+2017-07-13 21:46:58,355 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text  Error: No match for E-Mail Address and/or Password.
+2017-07-13 21:46:58,355 [main] INFO com.jaga.pageobjectmodel.pagelibrary.SignIn -  Error: No match for E-Mail Address and/or Password.
+2017-07-13 21:46:58,575 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 21:59:10,378 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 21:59:10,406 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 21:59:10,412 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 21:59:10,912 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:59:12,557 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:59:12,932 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value John is entered at element By.name: firstname
+2017-07-13 21:59:13,271 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Smith is entered at element By.name: lastname
+2017-07-13 21:59:14,114 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 08/29/1993 is entered at element By.id: dob
+2017-07-13 21:59:14,429 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 21:59:14,711 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Software Company  is entered at element By.name: company
+2017-07-13 21:59:14,989 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Sholinganallur is entered at element By.name: street_address
+2017-07-13 21:59:15,238 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 600119.0 is entered at element By.name: postcode
+2017-07-13 21:59:15,529 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Chennai is entered at element By.name: city
+2017-07-13 21:59:15,796 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Tamil Nadu is entered at element By.name: state
+2017-07-13 21:59:16,460 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - DropDown option India is selected at element By.name: country
+2017-07-13 21:59:16,751 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 9.876543211E9 is entered at element By.name: telephone
+2017-07-13 21:59:17,033 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 21:59:17,285 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: confirmation
+2017-07-13 21:59:18,794 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 21:59:18,795 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - After Create Account
+2017-07-13 21:59:18,836 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 21:59:18,837 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Account has not been Registered and Created Successfully
+2017-07-13 21:59:18,973 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 21:59:18,974 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount -  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 21:59:19,241 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 21:59:30,965 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 21:59:30,965 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 21:59:30,966 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 21:59:31,467 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:01:51,055 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 22:01:51,078 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 22:01:51,079 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 22:01:51,589 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:01:53,108 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:01:53,430 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value John is entered at element By.name: firstname
+2017-07-13 22:01:53,878 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Smith is entered at element By.name: lastname
+2017-07-13 22:01:54,740 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 08/29/1993 is entered at element By.id: dob
+2017-07-13 22:01:55,111 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 22:01:55,410 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Software Company  is entered at element By.name: company
+2017-07-13 22:01:55,691 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Sholinganallur is entered at element By.name: street_address
+2017-07-13 22:01:55,970 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 600119.0 is entered at element By.name: postcode
+2017-07-13 22:01:56,233 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Chennai is entered at element By.name: city
+2017-07-13 22:01:56,517 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Tamil Nadu is entered at element By.name: state
+2017-07-13 22:01:57,122 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - DropDown option India is selected at element By.name: country
+2017-07-13 22:01:57,436 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 9.876543211E9 is entered at element By.name: telephone
+2017-07-13 22:01:57,708 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 22:01:57,975 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: confirmation
+2017-07-13 22:01:59,460 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:01:59,462 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - After Create Account
+2017-07-13 22:01:59,513 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 22:01:59,513 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Account has not been Registered and Created Successfully
+2017-07-13 22:01:59,651 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:01:59,652 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount -  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:01:59,938 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 22:02:13,264 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 22:02:13,265 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 22:02:13,265 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 22:02:13,768 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:02:15,597 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:02:15,898 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Jack is entered at element By.name: firstname
+2017-07-13 22:02:16,262 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Son is entered at element By.name: lastname
+2017-07-13 22:03:36,340 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 22:03:36,368 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 22:03:36,369 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 22:03:36,826 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:03:38,406 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:03:38,840 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value John is entered at element By.name: firstname
+2017-07-13 22:03:39,182 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Smith is entered at element By.name: lastname
+2017-07-13 22:03:39,996 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 08/29/1993 is entered at element By.id: dob
+2017-07-13 22:03:40,310 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 22:03:40,585 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Software Company  is entered at element By.name: company
+2017-07-13 22:03:40,857 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Sholinganallur is entered at element By.name: street_address
+2017-07-13 22:03:41,123 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 600119.0 is entered at element By.name: postcode
+2017-07-13 22:03:41,423 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Chennai is entered at element By.name: city
+2017-07-13 22:03:41,678 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Tamil Nadu is entered at element By.name: state
+2017-07-13 22:03:42,217 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - DropDown option India is selected at element By.name: country
+2017-07-13 22:03:42,556 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 9.876543211E9 is entered at element By.name: telephone
+2017-07-13 22:03:42,831 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 22:03:43,097 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: confirmation
+2017-07-13 22:03:44,592 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:03:44,593 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - After Create Account
+2017-07-13 22:03:44,642 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 22:03:44,642 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Account has not been Registered and Created Successfully
+2017-07-13 22:03:44,788 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:03:44,789 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount -  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:03:45,055 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 22:05:20,967 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 22:05:20,990 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 22:05:20,991 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 22:05:21,460 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:05:23,096 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:05:23,402 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value John is entered at element By.name: firstname
+2017-07-13 22:05:23,750 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Smith is entered at element By.name: lastname
+2017-07-13 22:05:24,582 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 08/29/1993 is entered at element By.id: dob
+2017-07-13 22:05:24,881 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 22:05:25,154 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Software Company  is entered at element By.name: company
+2017-07-13 22:05:25,435 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Sholinganallur is entered at element By.name: street_address
+2017-07-13 22:05:25,728 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 600119.0 is entered at element By.name: postcode
+2017-07-13 22:05:25,985 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Chennai is entered at element By.name: city
+2017-07-13 22:05:26,244 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Tamil Nadu is entered at element By.name: state
+2017-07-13 22:05:26,858 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - DropDown option India is selected at element By.name: country
+2017-07-13 22:05:27,156 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 9.876543211E9 is entered at element By.name: telephone
+2017-07-13 22:05:27,475 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 22:05:27,731 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: confirmation
+2017-07-13 22:05:29,203 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:05:29,204 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - After Create Account
+2017-07-13 22:05:29,247 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 22:05:29,248 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Account has not been Registered and Created Successfully
+2017-07-13 22:05:29,402 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:05:29,402 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount -  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:05:29,673 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed
+2017-07-13 22:12:14,241 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The Data from Property file is : http://www.gcrit.com/build3/create_account_success.php
+2017-07-13 22:12:14,246 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - Before Create Account
+2017-07-13 22:12:14,247 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Registration Details for the Create Account
+2017-07-13 22:12:14,714 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:12:16,288 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:12:16,582 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value John is entered at element By.name: firstname
+2017-07-13 22:12:16,945 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Smith is entered at element By.name: lastname
+2017-07-13 22:12:17,736 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 08/29/1993 is entered at element By.id: dob
+2017-07-13 22:12:18,055 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value testjaga137171@gmail.com is entered at element By.name: email_address
+2017-07-13 22:12:18,328 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Software Company  is entered at element By.name: company
+2017-07-13 22:12:18,586 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Sholinganallur is entered at element By.name: street_address
+2017-07-13 22:12:18,835 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 600119.0 is entered at element By.name: postcode
+2017-07-13 22:12:19,112 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Chennai is entered at element By.name: city
+2017-07-13 22:12:19,368 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value Tamil Nadu is entered at element By.name: state
+2017-07-13 22:12:19,905 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - DropDown option India is selected at element By.name: country
+2017-07-13 22:12:20,206 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value 9.876543211E9 is entered at element By.name: telephone
+2017-07-13 22:12:20,470 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: password
+2017-07-13 22:12:20,723 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - The value jaga@12345 is entered at element By.name: confirmation
+2017-07-13 22:12:22,354 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Element clicked successfully
+2017-07-13 22:12:22,356 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - After Create Account
+2017-07-13 22:12:22,399 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Current Url is captured
+2017-07-13 22:12:22,400 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount - The Account has not been Registered and Created Successfully
+2017-07-13 22:12:22,542 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Returning Actual Text  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:12:22,543 [main] INFO com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount -  Your E-Mail Address already exists in our records - please log in with the e-mail address or create an account with a different address.
+2017-07-13 22:12:22,821 [main] INFO com.jaga.pageobjectmodel.testbase.Common_Functions - Browser closed

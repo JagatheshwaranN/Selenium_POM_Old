@@ -13,7 +13,8 @@ package com.jaga.pageobjectmodel.pagelibrary;
  * Importing the necessary predefined classes
  */
 import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
+import org.apache.log4j.*;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -70,6 +71,7 @@ public class CreateAnAccount {
 		String ExpectedUrl = cf.getTestData("SuccessUrl");
 		
 		try {
+			logger.info("Before Create Account");
 			logger.info("The Registration Details for the Create Account");
 
 			cf.clickByXpath(CreateAccContinueBtn);
@@ -88,6 +90,8 @@ public class CreateAnAccount {
 			cf.enterTextByName(Password, password);
 			cf.enterTextByName(ConfirmPassword, confirmPassword);
 			cf.clickById(Submit);
+			
+			logger.info("After Create Account");
 			
 			String ActualUrl = cf.getUrl();
 

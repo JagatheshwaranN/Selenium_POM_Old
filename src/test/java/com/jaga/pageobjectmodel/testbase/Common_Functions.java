@@ -22,8 +22,10 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
+import org.apache.log4j.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
@@ -65,8 +67,12 @@ public class Common_Functions implements Functions{
 	 * 
 	 * @author Jagatheshwaran
 	 */
+	
 	public void init() throws IOException {
-
+		
+		/*String logConfigPath = "Log4j.properties";
+		PropertyConfigurator.configure(logConfigPath);
+		logger.setLevel(Level.WARN);*/
 		loadProperties();
 		selectBrowser(Repository.getProperty("browser"));
 		driver.get(Repository.getProperty("url"));
@@ -114,10 +120,10 @@ public class Common_Functions implements Functions{
 			}
 
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in invokeApp() " + e.getMessage());
+			logger.error("Unexpected exception occured in Selecting and launching the browser " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return null;
@@ -152,15 +158,15 @@ public class Common_Functions implements Functions{
 			}
 		};
 		try {
-			System.out.println("waiting for page to load...");
+			logger.info("waiting for page to load...");
 			wait = new WebDriverWait(driver, timeoutInSec);
 			wait.until(expectTime);
 
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Throwable e) {
-			System.out.println("Timeout waiting for Page Load Request to complete after " + timeoutInSec + " seconds");
+			logger.info("Timeout waiting for Page Load Request to complete after " + timeoutInSec + " seconds");
 			Assert.assertFalse(true, "Timeout waiting for Page Load Request to complete.");
 
 		}
@@ -188,15 +194,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.presenceOfElementLocated(id)).clear();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id)).sendKeys(data);
-			System.out.println("The value " + data + " is entered at element " + id);
+			logger.info("The value " + data + " is entered at element " + id);
 		} catch (TimeoutException e) {
-			System.err.println("The element with id :" + id + " doesn't exists " + e.getMessage());
+			logger.error("The element with id :" + id + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in entering value" + data + " into element with id : " + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception occured in entering value" + data + " into element with id : " + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -215,15 +221,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.presenceOfElementLocated(name)).clear();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name)).sendKeys(data);
-			System.out.println("The value " + data + " is entered at element " + name);			
+			logger.info("The value " + data + " is entered at element " + name);			
 		} catch (TimeoutException e) {
-			System.err.println("The element with name :" + name + " doesn't exists " + e.getMessage());
+			logger.error("The element with name :" + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in entering value" + data + " into element with name : " + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception occured in entering value" + data + " into element with name : " + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -242,15 +248,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.presenceOfElementLocated(cssSelector)).clear();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector)).sendKeys(data);
-			System.out.println("The value " + data + " is entered at element " + cssSelector);
+			logger.info("The value " + data + " is entered at element " + cssSelector);
 		} catch (TimeoutException e) {
-			System.err.println("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
+			logger.error("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in entering value" + data + " into element with cssSelector : " + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception occured in entering value" + data + " into element with cssSelector : " + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -269,15 +275,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.presenceOfElementLocated(className)).clear();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(className)).sendKeys(data);
-			System.out.println("The value " + data + " is entered at element " + className);
+			logger.info("The value " + data + " is entered at element " + className);
 		} catch (TimeoutException e) {
-			System.err.println("The element with className :" + className + " doesn't exists " + e.getMessage());
+			logger.error("The element with className :" + className + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in entering value" + data + " into element with className : " + className + "\n" + e.getMessage());
+			logger.error("Unexpected exception occured in entering value" + data + " into element with className : " + className + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -296,15 +302,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.presenceOfElementLocated(xpath)).clear();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath)).sendKeys(data);
-			System.out.println("The value " + data + " is entered at element " + xpath);
+			logger.info("The value " + data + " is entered at element " + xpath);
 		} catch (TimeoutException e) {
-			System.err.println("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
+			logger.error("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in entering value" + data + " into element with xpath : " + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception occured in entering value" + data + " into element with xpath : " + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -320,15 +326,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			Url= driver.getCurrentUrl();
-			System.out.println("Current Url is captured");
+			logger.info("Current Url is captured");
 		} catch (TimeoutException e) {
-			System.err.println("Current Url is not captured" + e.getMessage());
+			logger.error("Current Url is not captured" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in capturing Current Url:" + e.getMessage());
+			logger.error("Unexpected exception in capturing Current Url:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}	
 		return Url;
@@ -343,15 +349,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.urlToBe(url)))
-				System.out.println("Actual Url is matched with expected url");
+				logger.info("Actual Url is matched with expected url");
 			else
-				System.out.println("Actual Url doesnot matches with expected url");
+				logger.info("Actual Url doesnot matches with expected url");
 
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in verifying Url with expected url :" + url + " \n" + e.getMessage());
+			logger.error("Unexpected exception occured in verifying Url with expected url :" + url + " \n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -369,15 +375,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.titleIs(title)))
-				System.out.println("Actual Title is matched with expected title");
+				logger.info("Actual Title is matched with expected title");
 			else
-				System.out.println("Actual Title doesnot matches with expected title");
+				logger.info("Actual Title doesnot matches with expected title");
 
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in verifying title with expected tilte :" + title + " \n" + e.getMessage());
+			logger.error("Unexpected exception occured in verifying title with expected tilte :" + title + " \n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -396,17 +402,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBePresentInElementLocated(id, text)))
-				System.out.println("Actual text is matched with expected text");
+				logger.info("Actual text is matched with expected text");
 			else
-				System.out.println("Actual text doesnot matches with expected text");
+				logger.info("Actual text doesnot matches with expected text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with id : " + id + " doesn't exists " + e.getMessage());
+			logger.error("The element with id : " + id + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in verifying Text " + e.getMessage());
+			logger.error("Unexpected exception occured in verifying Text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -424,17 +430,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBe(name, text)))
-				System.out.println("Actual text is matched with expected text");
+				logger.info("Actual text is matched with expected text");
 			else
-				System.out.println("Actual text doesnot matches with expected text");
+				logger.info("Actual text doesnot matches with expected text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with name: " + name + " doesn't exists " + e.getMessage());
+			logger.error("The element with name: " + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in verifying Text " + e.getMessage());
+			logger.error("Unexpected exception occured in verifying Text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -452,17 +458,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBe(cssSelector, text)))
-				System.out.println("Actual text is matched with expected text");
+				logger.info("Actual text is matched with expected text");
 			else
-				System.out.println("Actual text doesnot matches with expected text");
+				logger.info("Actual text doesnot matches with expected text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with cssSelector: " + cssSelector + " doesn't exists " + e.getMessage());
+			logger.error("The element with cssSelector: " + cssSelector + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in verifying Text " + e.getMessage());
+			logger.error("Unexpected exception occured in verifying Text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -480,17 +486,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBe(className, text)))
-				System.out.println("Actual text is matched with expected text");
+				logger.info("Actual text is matched with expected text");
 			else
-				System.out.println("Actual text doesnot matches with expected text");
+				logger.info("Actual text doesnot matches with expected text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with className: " + className + " doesn't exists " + e.getMessage());
+			logger.error("The element with className: " + className + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in verifying Text " + e.getMessage());
+			logger.error("Unexpected exception occured in verifying Text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -508,17 +514,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBe(xpath, text)))
-				System.out.println("Actual text is matched with expected text");
+				logger.info("Actual text is matched with expected text");
 			else
-				System.out.println("Actual text doesnot matches with expected text");
+				logger.info("Actual text doesnot matches with expected text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with xpath: " + xpath + " doesn't exists " + e.getMessage());
+			logger.error("The element with xpath: " + xpath + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception occured in verifying Text " + e.getMessage());
+			logger.error("Unexpected exception occured in verifying Text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -536,17 +542,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBePresentInElementLocated(id, text)))
-				System.out.println("The Actual text contains the provided text");
+				logger.info("The Actual text contains the provided text");
 			else
-				System.out.println("The Actual text doesn't contains the provided text");
+				logger.info("The Actual text doesn't contains the provided text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with id :" + id + " doesn't exists " + e.getMessage());
+			logger.error("The element with id :" + id + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
+			logger.error("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -564,17 +570,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBePresentInElementLocated(name, text)))
-				System.out.println("The Actual text contains the provided text");
+				logger.info("The Actual text contains the provided text");
 			else
-				System.out.println("The Actual text doesn't contains the provided text");
+				logger.info("The Actual text doesn't contains the provided text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with name :" + name + " doesn't exists " + e.getMessage());
+			logger.error("The element with name :" + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
+			logger.error("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -592,17 +598,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBePresentInElementLocated(cssSelector, text)))
-				System.out.println("The Actual text contains the provided text");
+				logger.info("The Actual text contains the provided text");
 			else
-				System.out.println("The Actual text doesn't contains the provided text");
+				logger.info("The Actual text doesn't contains the provided text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
+			logger.error("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
+			logger.error("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -620,17 +626,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBePresentInElementLocated(className, text)))
-				System.out.println("The Actual text contains the provided text");
+				logger.info("The Actual text contains the provided text");
 			else
-				System.out.println("The Actual text doesn't contains the provided text");
+				logger.info("The Actual text doesn't contains the provided text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with className :" + className + " doesn't exists " + e.getMessage());
+			logger.error("The element with className :" + className + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
+			logger.error("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -648,17 +654,17 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			if (wait.until(ExpectedConditions.textToBePresentInElementLocated(xpath, text)))
-				System.out.println("The Actual text contains the provided text");
+				logger.info("The Actual text contains the provided text");
 			else
-				System.out.println("The Actual text doesn't contains the provided text");
+				logger.info("The Actual text doesn't contains the provided text");
 		} catch (TimeoutException e) {
-			System.err.println("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
+			logger.error("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
+			logger.error("unexpected exception occured in verifying  actual text contains expected text " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -676,15 +682,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.elementToBeClickable(id));
 			driver.findElement(id).click();
-			System.out.println("Element clicked successfully");
+			logger.info("Element clicked successfully");
 		} catch (TimeoutException e) {
-			System.err.println("The element with id :" + id + " doesn't exists " + e.getMessage());
+			logger.error("The element with id :" + id + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in clicking by id :" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in clicking by id :" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -702,15 +708,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.elementToBeClickable(name));
 			driver.findElement(name).click();
-			System.out.println("Element clicked successfully");
+			logger.info("Element clicked successfully");
 		} catch (TimeoutException e) {
-			System.err.println("The element with name :" + name + " doesn't exists " + e.getMessage());
+			logger.error("The element with name :" + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in clicking by name :" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in clicking by name :" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -728,15 +734,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.elementToBeClickable(cssSelector));
 			driver.findElement(cssSelector).click();
-			System.out.println("Element clicked successfully");
+			logger.info("Element clicked successfully");
 		} catch (TimeoutException e) {
-			System.err.println("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
+			logger.error("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in clicking by cssSelector :" + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception in clicking by cssSelector :" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -754,15 +760,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.elementToBeClickable(className));
 			driver.findElement(className).click();
-			System.out.println("Element clicked successfully");
+			logger.info("Element clicked successfully");
 		} catch (TimeoutException e) {
-			System.err.println("The element with className :" + className + " doesn't exists " + e.getMessage());
+			logger.error("The element with className :" + className + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in clicking by className :" + className + "\n" + e.getMessage());
+			logger.error("Unexpected exception in clicking by className :" + className + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -780,15 +786,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.elementToBeClickable(xpath));
 			driver.findElement(xpath).click();
-			System.out.println("Element clicked successfully");
+			logger.info("Element clicked successfully");
 		} catch (TimeoutException e) {
-			System.err.println("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
+			logger.error("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in clicking by xpath :" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in clicking by xpath :" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -806,15 +812,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.elementToBeClickable(partialLinkText));
 			driver.findElement(partialLinkText).click();
-			System.out.println("Element clicked successfully");
+			logger.info("Element clicked successfully");
 		} catch (TimeoutException e) {
-			System.err.println("The element with partialLinkText :" + partialLinkText + " doesn't exists " + e.getMessage());
+			logger.error("The element with partialLinkText :" + partialLinkText + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in clicking by partialLinkText :" + partialLinkText + "\n" + e.getMessage());
+			logger.error("Unexpected exception in clicking by partialLinkText :" + partialLinkText + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -832,15 +838,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.elementToBeClickable(linkText));
 			driver.findElement(linkText).click();
-			System.out.println("Element clicked successfully");
+			logger.info("Element clicked successfully");
 		} catch (TimeoutException e) {
-			System.err.println("The element with linkText :" + linkText + " doesn't exists " + e.getMessage());
+			logger.error("The element with linkText :" + linkText + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in clicking by linkText :" + linkText + "\n" + e.getMessage());
+			logger.error("Unexpected exception in clicking by linkText :" + linkText + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -858,15 +864,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			text = wait.until(ExpectedConditions.visibilityOfElementLocated(id)).getText();
-			System.out.println("Returning Actual Text " + text);
+			logger.info("Returning Actual Text " + text);
 		} catch (TimeoutException e) {
-			System.err.println("The element with id :" + id + " doesn't exists " + e.getMessage());
+			logger.error("The element with id :" + id + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in geting text by locator id :" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in geting text by locator id :" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return text;
@@ -885,15 +891,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			text = wait.until(ExpectedConditions.visibilityOfElementLocated(name)).getText();
-			System.out.println("Returning Actual Text " + text);
+			logger.info("Returning Actual Text " + text);
 		} catch (TimeoutException e) {
-			System.err.println("The element with name :" + name + " doesn't exists " + e.getMessage());
+			logger.error("The element with name :" + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in geting text by locator name :" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in geting text by locator name :" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return text;
@@ -912,15 +918,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			text = wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector)).getText();
-			System.out.println("Returning Actual Text " + text);
+			logger.info("Returning Actual Text " + text);
 		} catch (TimeoutException e) {
-			System.err.println("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
+			logger.error("The element with cssSelector :" + cssSelector + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in geting text by locator cssSelector :" + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception in geting text by locator cssSelector :" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return text;
@@ -939,15 +945,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			text = wait.until(ExpectedConditions.visibilityOfElementLocated(className)).getText();
-			System.out.println("Returning Actual Text " + text);
+			logger.info("Returning Actual Text " + text);
 		} catch (TimeoutException e) {
-			System.err.println("The element with className :" + className + " doesn't exists " + e.getMessage());
+			logger.error("The element with className :" + className + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in geting text by locator className :" + className + "\n" + e.getMessage());
+			logger.error("Unexpected exception in geting text by locator className :" + className + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return text;
@@ -966,15 +972,15 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			text = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath)).getText();
-			System.out.println("Returning Actual Text " + text);
+			logger.info("Returning Actual Text " + text);
 		} catch (TimeoutException e) {
-			System.err.println("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
+			logger.error("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in geting text by locator xpath :" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in geting text by locator xpath :" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return text;
@@ -994,15 +1000,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			Select select = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(id)));
 			select.selectByVisibleText(value);
-			System.out.println("DropDown option " + value + " is selected at element " + id);
+			logger.info("DropDown option " + value + " is selected at element " + id);
 		} catch (TimeoutException e) {
-			System.err.println("The element with id :" + id + " doesn't exists " + e.getMessage());
+			logger.error("The element with id :" + id + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in selecting visible option by id:" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in selecting visible option by id:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1021,15 +1027,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			Select select = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(name)));
 			select.selectByVisibleText(value);
-			System.out.println("DropDown option " + value + " is selected at element " + name);
+			logger.info("DropDown option " + value + " is selected at element " + name);
 		} catch (TimeoutException e) {
-			System.err.println("The element with name :" + name + " doesn't exists " + e.getMessage());
+			logger.error("The element with name :" + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in selecting visible option by name:" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in selecting visible option by name:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1048,15 +1054,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			Select select = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(xpath)));
 			select.selectByVisibleText(value);
-			System.out.println("DropDown option " + value + " is selected at element " + xpath);
+			logger.info("DropDown option " + value + " is selected at element " + xpath);
 		} catch (TimeoutException e) {
-			System.err.println("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
+			logger.error("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in selecting visible option by xpath:" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in selecting visible option by xpath:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1075,15 +1081,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			Select select = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(id)));
 			select.selectByIndex(index);
-			System.out.println("The option  at index " + index + " is selected");
+			logger.info("The option  at index " + index + " is selected");
 		} catch (TimeoutException e) {
-			System.err.println("The element with id :" + id + " doesn't exists " + e.getMessage());
+			logger.error("The element with id :" + id + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in selecting by index by id :" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in selecting by index by id :" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1102,15 +1108,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			Select select = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(name)));
 			select.selectByIndex(index);
-			System.out.println("The option  at index " + index + " is selected");
+			logger.info("The option  at index " + index + " is selected");
 		} catch (TimeoutException e) {
-			System.err.println("The element with name :" + name + " doesn't exists " + e.getMessage());
+			logger.error("The element with name :" + name + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in selecting by index by name :" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in selecting by index by name :" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1129,15 +1135,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			Select select = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(xpath)));
 			select.selectByIndex(index);
-			System.out.println("The option  at index " + index + " is selected");
+			logger.info("The option  at index " + index + " is selected");
 		} catch (TimeoutException e) {
-			System.err.println("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
+			logger.error("The element with xpath :" + xpath + " doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in selecting by index by xpath :" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in selecting by index by xpath :" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1151,21 +1157,21 @@ public class Common_Functions implements Functions{
 	public void switchToParentWindow() {
 		try {
 			Set<String> windowhandleSet = driver.getWindowHandles();
-			System.out.println("count of opened windows :" + windowhandleSet.size());
+			logger.info("count of opened windows :" + windowhandleSet.size());
 			for (String windowhandle : windowhandleSet) {
-				System.out.println("navigating windows :" + windowhandle);
+				logger.info("navigating windows :" + windowhandle);
 				driver.switchTo().window(windowhandle);
 				break;
 			}
-			System.out.println("control is switched to parent window");
+			logger.info("control is switched to parent window");
 		} catch (NoSuchWindowException e) {
-			System.err.println("Exception occured while switching to parent window  " + e.getMessage());
+			logger.error("Exception occured while switching to parent window  " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to parent window:" + e.getMessage());
+			logger.error("Unexpected exception in switching to parent window:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1183,24 +1189,24 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.numberOfWindowsToBe(totalWindowExpected));
 			Set<String> windowhandleSet = driver.getWindowHandles();
-			System.out.println("count of opened windows :" + windowhandleSet.size());
+			logger.info("count of opened windows :" + windowhandleSet.size());
 			for (String windowhandle : windowhandleSet) {
-				System.out.println("navigating windows :" + windowhandle);
+				logger.info("navigating windows :" + windowhandle);
 				driver.switchTo().window(windowhandle);
 				break;
 			}
-			System.out.println("control is switched to parent window");
+			logger.info("control is switched to parent window");
 		} catch (TimeoutException e) {
-			System.err.println("Expected no of windows doesn't exists " + e.getMessage());
+			logger.error("Expected no of windows doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoSuchWindowException e) {
-			System.err.println("Exception occured while switching to parent window  " + e.getMessage());
+			logger.error("Exception occured while switching to parent window  " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to parent window:" + e.getMessage());
+			logger.error("Unexpected exception in switching to parent window:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1213,20 +1219,20 @@ public class Common_Functions implements Functions{
 	public void switchToLastWindow() {
 		try {
 			Set<String> windowhandleSet = driver.getWindowHandles();
-			System.out.println("count of opened windows :" + windowhandleSet.size());
+			logger.info("count of opened windows :" + windowhandleSet.size());
 			for (String windowhandle : windowhandleSet) {
-				System.out.println("navigating windows :" + windowhandle);
+				logger.info("navigating windows :" + windowhandle);
 				driver.switchTo().window(windowhandle);
 			}
-			System.out.println("control is switched to last window");
+			logger.info("control is switched to last window");
 		} catch (NoSuchWindowException e) {
-			System.err.println("Exception occured while switching window  " + e.getMessage());
+			logger.error("Exception occured while switching window  " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to Last Window:" + e.getMessage());
+			logger.error("Unexpected exception in switching to Last Window:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1243,23 +1249,23 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.numberOfWindowsToBe(totalWindowExpected));
 			Set<String> windowhandleSet = driver.getWindowHandles();
-			System.out.println("count of opened windows :" + windowhandleSet.size());
+			logger.info("count of opened windows :" + windowhandleSet.size());
 			for (String windowhandle : windowhandleSet) {
-				System.out.println("navigating windows :" + windowhandle);
+				logger.info("navigating windows :" + windowhandle);
 				driver.switchTo().window(windowhandle);
 			}
-			System.out.println("control is switched to last window");
+			logger.info("control is switched to last window");
 		} catch (TimeoutException e) {
-			System.err.println("Expected no of windows doesn't exists " + e.getMessage());
+			logger.error("Expected no of windows doesn't exists " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoSuchWindowException e) {
-			System.err.println("Exception occured while switching window  " + e.getMessage());
+			logger.error("Exception occured while switching window  " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to Last Window:" + e.getMessage());
+			logger.error("Unexpected exception in switching to Last Window:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1273,18 +1279,18 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.alertIsPresent()).accept();
-			System.out.println("Alert accepted");
+			logger.info("Alert accepted");
 		} catch (TimeoutException e) {
-			System.err.println("Alert is not present" + e.getMessage());
+			logger.error("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in accepting alert " + e.getMessage());
+			logger.error("Exception occured in accepting alert " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
+			logger.error("Unexpected exception in accepting alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1299,18 +1305,18 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.alertIsPresent()).dismiss();
-			System.out.println("Alert dismissed");
+			logger.info("Alert dismissed");
 		} catch (TimeoutException e) {
-			System.err.println("Alert is not present" + e.getMessage());
+			logger.error("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in accepting alert " + e.getMessage());
+			logger.error("Exception occured in accepting alert " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
+			logger.error("Unexpected exception in accepting alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1325,19 +1331,19 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			text = wait.until(ExpectedConditions.alertIsPresent()).getText();
-			System.out.println("Alert text" + text);
+			logger.info("Alert text" + text);
 		} catch (TimeoutException e) {
-			System.err.println("Alert is not present" + e.getMessage());
+			logger.error("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in accepting alert " + e.getMessage());
+			logger.error("Exception occured in accepting alert " + e.getMessage());
 
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in accepting alert:" + e.getMessage());
+			logger.error("Unexpected exception in accepting alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1351,18 +1357,18 @@ public class Common_Functions implements Functions{
 		try {
 			waitFunction();
 			wait.until(ExpectedConditions.alertIsPresent());
-			System.out.println("Alert is present");
+			logger.info("Alert is present");
 		} catch (TimeoutException e) {
-			System.err.println("Alert is not present" + e.getMessage());
+			logger.error("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in verifying alert presence " + e.getMessage());
+			logger.error("Exception occured in verifying alert presence " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying presence of alert:" + e.getMessage());
+			logger.error("Unexpected exception in verifying presence of alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return false;
@@ -1378,18 +1384,18 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert();
-			System.out.println("Switch to alert");
+			logger.info("Switch to alert");
 		} catch (TimeoutException e) {
-			System.err.println("Alert is not present" + e.getMessage());
+			logger.error("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in switching to alert " + e.getMessage());
+			logger.error("Exception occured in switching to alert " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to alert:" + e.getMessage());
+			logger.error("Unexpected exception in switching to alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return false;
@@ -1407,18 +1413,18 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.alertIsPresent()).sendKeys(text);	
 			wait.until(ExpectedConditions.alertIsPresent()).accept();	
-			System.out.println("Text is sent to alert and accepted");
+			logger.info("Text is sent to alert and accepted");
 		} catch (TimeoutException e) {
-			System.err.println("Alert is not present" + e.getMessage());
+			logger.error("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in sending text to alert and accept" + e.getMessage());
+			logger.error("Exception occured in sending text to alert and accept" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in sending text to alert and accept:" + e.getMessage());
+			logger.error("Unexpected exception in sending text to alert and accept:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	
@@ -1436,18 +1442,18 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.alertIsPresent()).sendKeys(text);	
 			wait.until(ExpectedConditions.alertIsPresent()).dismiss();	
-			System.out.println("Text is sent to alert and dismissed");
+			logger.info("Text is sent to alert and dismissed");
 		} catch (TimeoutException e) {
-			System.err.println("Alert is not present" + e.getMessage());
+			logger.error("Alert is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (NoAlertPresentException e) {
-			System.err.println("Exception occured in sending text to alert and dismiss" + e.getMessage());
+			logger.error("Exception occured in sending text to alert and dismiss" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in sending text to alert and dismiss:" + e.getMessage());
+			logger.error("Unexpected exception in sending text to alert and dismiss:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	
@@ -1466,15 +1472,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
 			driver.findElement(id).isEnabled();
-			System.out.println("Element is Enabled");
+			logger.info("Element is Enabled");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is enabled:" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is enabled:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1493,15 +1499,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
 			driver.findElement(name).isEnabled();
-			System.out.println("Element is Enabled");
+			logger.info("Element is Enabled");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is enabled:" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is enabled:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1520,15 +1526,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
 			driver.findElement(cssSelector).isEnabled();
-			System.out.println("Element is Enabled");
+			logger.info("Element is Enabled");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is enabled:" + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is enabled:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1547,15 +1553,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
 			driver.findElement(xpath).isEnabled();
-			System.out.println("Element is Enabled");
+			logger.info("Element is Enabled");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is enabled:" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is enabled:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1574,15 +1580,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
 			driver.findElement(id).isDisplayed();
-			System.out.println("Element is Displayed");
+			logger.info("Element is Displayed");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is displayed:" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is displayed:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1601,15 +1607,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
 			driver.findElement(name).isDisplayed();
-			System.out.println("Element is Displayed");
+			logger.info("Element is Displayed");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is displayed:" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is displayed:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1628,15 +1634,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
 			driver.findElement(cssSelector).isDisplayed();
-			System.out.println("Element is Displayed");
+			logger.info("Element is Displayed");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is displayed:" + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is displayed:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1655,15 +1661,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
 			driver.findElement(xpath).isDisplayed();
-			System.out.println("Element is Displayed");
+			logger.info("Element is Displayed");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is displayed:" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is displayed:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1682,15 +1688,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
 			driver.findElement(id).isSelected();
-			System.out.println("Element is Checked");
+			logger.info("Element is Checked");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is checked:" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is checked:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1709,15 +1715,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
 			driver.findElement(name).isSelected();
-			System.out.println("Element is Checked");
+			logger.info("Element is Checked");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is checked:" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is checked:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1736,15 +1742,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
 			driver.findElement(cssSelector).isSelected();
-			System.out.println("Element is Checked");
+			logger.info("Element is Checked");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is checked:" + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is checked:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1763,15 +1769,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
 			driver.findElement(xpath).isSelected();
-			System.out.println("Element is Checked");
+			logger.info("Element is Checked");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in verifying the element is checked:" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in verifying the element is checked:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return true;
@@ -1789,15 +1795,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
 			driver.findElements(id);
-			System.out.println("Retrieved List of Web Elements");
+			logger.info("Retrieved List of Web Elements");
 		} catch (TimeoutException e) {
-			System.err.println("Elements is not present" + e.getMessage());
+			logger.error("Elements is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in retrieving list of web elements:" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in retrieving list of web elements:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return null;
@@ -1815,15 +1821,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
 			driver.findElements(cssSelector);
-			System.out.println("Retrieved List of Web Elements");
+			logger.info("Retrieved List of Web Elements");
 		} catch (TimeoutException e) {
-			System.err.println("Elements is not present" + e.getMessage());
+			logger.error("Elements is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in retrieving list of web elements:" + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception in retrieving list of web elements:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return null;
@@ -1841,15 +1847,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
 			driver.findElements(xpath);
-			System.out.println("Retrieved List of Web Elements");
+			logger.info("Retrieved List of Web Elements");
 		} catch (TimeoutException e) {
-			System.err.println("Elements is not present" + e.getMessage());
+			logger.error("Elements is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in retrieving list of web elements:" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in retrieving list of web elements:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 		return null;
@@ -1868,15 +1874,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(id));
 			driver.switchTo().frame(driver.findElement(id));
-			System.out.println("Switch to Frame");
+			logger.info("Switch to Frame");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to frame:" + id + "\n" + e.getMessage());
+			logger.error("Unexpected exception in switching to frame:" + id + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1894,15 +1900,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(name));
 			driver.switchTo().frame(driver.findElement(name));
-			System.out.println("Switch to Frame");
+			logger.info("Switch to Frame");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to frame:" + name + "\n" + e.getMessage());
+			logger.error("Unexpected exception in switching to frame:" + name + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1920,15 +1926,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(cssSelector));
 			driver.switchTo().frame(driver.findElement(cssSelector));
-			System.out.println("Switch to Frame");
+			logger.info("Switch to Frame");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to frame:" + cssSelector + "\n" + e.getMessage());
+			logger.error("Unexpected exception in switching to frame:" + cssSelector + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1946,15 +1952,15 @@ public class Common_Functions implements Functions{
 			waitFunction();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
 			driver.switchTo().frame(driver.findElement(xpath));
-			System.out.println("Switch to Frame");
+			logger.info("Switch to Frame");
 		} catch (TimeoutException e) {
-			System.err.println("Element is not present" + e.getMessage());
+			logger.error("Element is not present" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in switching to frame:" + xpath + "\n" + e.getMessage());
+			logger.error("Unexpected exception in switching to frame:" + xpath + "\n" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 	}
@@ -1969,12 +1975,12 @@ public class Common_Functions implements Functions{
 		try {
 			if (driver != null)
 				driver.close();
-			System.out.println("Browser closed");
+			logger.info("Browser closed");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in Close browser:" + e.getMessage());
+			logger.error("Unexpected exception in Close browser:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -1990,12 +1996,12 @@ public class Common_Functions implements Functions{
 		try {
 			if (driver != null)
 				driver.quit();
-			System.out.println("All Browsers closed");
+			logger.info("All Browsers closed");
 		} catch (WebDriverException e) {
-			System.err.println("The Browser could not be found " + e.getMessage());
+			logger.error("The Browser could not be found " + e.getMessage());
 			throw new RuntimeException("FAILED");
 		} catch (Exception e) {
-			System.err.println("Unexpected exception in Close browser:" + e.getMessage());
+			logger.error("Unexpected exception in Close browser:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
 
@@ -2024,7 +2030,7 @@ public class Common_Functions implements Functions{
 			e.printStackTrace();
 		}
 		String PropData = Repository.getProperty(property);
-		System.out.println("The Data from Property file is : " + PropData);
+		logger.info("The Data from Property file is : " + PropData);
 		try {
 
 			String data = PropData.trim();
@@ -2034,5 +2040,10 @@ public class Common_Functions implements Functions{
 		}
 
 	}
-
+	/*public static void main(String ar[])
+	{
+		String logConfigPath = "Log4j.properties";
+		PropertyConfigurator.configure(logConfigPath);
+		logger.setLevel(Level.WARN);
+	}*/
 }

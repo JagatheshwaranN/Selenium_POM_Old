@@ -12,8 +12,10 @@ package com.jaga.pageobjectmodel.pagelibrary;
 /**
  * Importing the necessary predefined classes
  */
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
+import org.apache.log4j.*;
 
 import junit.framework.AssertionFailedError;
 
@@ -38,6 +40,7 @@ public class SignIn extends Common_Functions {
 	static Logger logger = Logger.getLogger(SignIn.class.getName());
 	Common_Functions cf = new Common_Functions(); 
 	
+	
 	/**
 	 * Declaring all the Page object locators using By class
 	 * 
@@ -53,6 +56,7 @@ public class SignIn extends Common_Functions {
 	 * This method will enter the credentials and then click the SignIn button
 	 * 
 	 * @author Jagatheshwaran
+	 * @throws IOException 
 	 */
 	public void SignInTOAccount(String userName, String passWord) throws InvocationTargetException {
 
@@ -62,18 +66,19 @@ public class SignIn extends Common_Functions {
 		
 
 		try {
+			
 			logger.info("Before SignIn into Account");
 			cf.enterTextByName(Email, userName);
 			cf.enterTextByName(Password, passWord);
 			cf.clickById(SignIn);		
-
+			logger.info("After SignIn into Account");
+			
 			String ActualUrl = cf.getUrl();
 
 			if (ActualUrl.contains(ExpectedUrl)) {
 				logger.info("SignIn into Account is Successful");
 				logger.info(cf.getTextByXpath(Greeting));
 				Assert.assertEquals(ActualUrl, ExpectedUrl);
-
 			} else {
 				logger.info("SignIn into Account is Unsuccessful");
 				logger.info(cf.getTextByXpath(SignInError));
