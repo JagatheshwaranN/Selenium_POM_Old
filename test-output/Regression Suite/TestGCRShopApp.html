@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>TestNG:  TestGCRShopApp</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>TestGCRShopApp</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Jul 15 21:34:42 IST 2017</td>
+</tr>
+<tr><td>Total time:</td><td>206 seconds (206527 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication.teardown()'><b>teardown</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.relevantcodes.extentreports.ExtentReports.endTest(ExtentReports.java:150)
+	at com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication.teardown(TestGCRShopApplication.java:106)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace23713169", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace23713169'><pre>java.lang.NullPointerException
+	at com.relevantcodes.extentreports.ExtentReports.endTest(ExtentReports.java:150)
+	at com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication.teardown(TestGCRShopApplication.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:225)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:114)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication@e63ade</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication.testSignIn()'><b>testSignIn</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication<br>Parameters: Y, SignIn, testjaga157175@gmail.com, jaga@12345<br/>
+<a href="#Output-22616158" onClick='toggleBox("Output-22616158", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-22616158" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-22616158">
+<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-40-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-40-testSignIn.png" alt=""height='100' width='100'/> <br /><br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication@e63ade</td></tr>
+<tr>
+<td title='com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication.testSignIn()'><b>testSignIn</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication<br>Parameters: Y, SignIn, testjaga157175@gmail.com, jaga@1234<br/>
+<a href="#Output-19261115" onClick='toggleBox("Output-19261115", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-19261115" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-19261115">
+<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-08-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-08-testSignIn.png" alt=""height='100' width='100'/> <br /><br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication@e63ade</td></tr>
+<tr>
+<td title='com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication.testcreateAccountRegistration()'><b>testcreateAccountRegistration</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication<br>Parameters: Y, CreateAccount, John, Smith, 08/29/1993, testjaga157175@gmail.com, IT Company, Sholinganallur, 600119, chennai, TamilNadu, India, 9876543211, jaga@12345, jaga@12345<br/>
+<a href="#Output-5104027" onClick='toggleBox("Output-5104027", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-5104027" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-5104027">
+<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-45-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-45-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br /><br/>
+</div>
+</td>
+<td></td>
+<td>8</td>
+<td>com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication@e63ade</td></tr>
+<tr>
+<td title='com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication.testcreateAccountRegistration()'><b>testcreateAccountRegistration</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication<br>Parameters: Y, CreateAccount, Jack, Son, 08/30/1993, testjaga157175@gmail.com, IT Company, Sholinganallur, 600119, chennai, TamilNadu, India, 9876543211, jaga@12345, jaga@12345<br/>
+<a href="#Output-15166892" onClick='toggleBox("Output-15166892", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-15166892" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-15166892">
+<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-14-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-15-2017_21-14-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br /><br/>
+</div>
+</td>
+<td></td>
+<td>14</td>
+<td>com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication@e63ade</td></tr>
+</table><p>
+</body>
+</html>

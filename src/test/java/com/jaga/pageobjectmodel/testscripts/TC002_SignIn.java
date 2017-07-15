@@ -16,9 +16,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.testng.SkipException;
-//import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -27,10 +25,10 @@ import com.jaga.pageobjectmodel.excelreader.Excel_Reader;
 import com.jaga.pageobjectmodel.pagelibrary.SignIn;
 import com.jaga.pageobjectmodel.testbase.Common_Functions;
 
+
 /**
- * A class is created with name : TC002_SignIn TC002_SignIn class extends
- * Common_Functions class to utilize the reusable methods of the
- * Common_Functions class
+ * A class is created with name : TC002_SignIn 
+ * TC002_SignIn class extends Common_Functions class to utilize the reusable methods of the Common_Functions class
  * 
  * @author Jagatheshwaran
  */
@@ -51,7 +49,7 @@ public class TC002_SignIn extends Common_Functions {
 	@BeforeMethod
 	public void setup() throws IOException {
 		init();
-
+		
 	}
 
 	/**
@@ -123,7 +121,7 @@ public class TC002_SignIn extends Common_Functions {
 	@AfterMethod
 	public void close() {
 		closeBrowser();
-
+		
 	}
 
 }

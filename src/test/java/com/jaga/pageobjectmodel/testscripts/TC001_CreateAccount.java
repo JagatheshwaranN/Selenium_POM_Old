@@ -25,6 +25,7 @@ import com.jaga.pageobjectmodel.excelreader.Excel_Reader;
 import com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount;
 import com.jaga.pageobjectmodel.testbase.Common_Functions;
 
+
 /**
  * A class is created with name : TC001_CreateAccount
  * TC001_CreateAccount class extends Common_Functions class to utilize the reusable methods of the Common_Functions class
@@ -39,6 +40,7 @@ public class TC001_CreateAccount extends Common_Functions {
 	 */
 	static Logger logger = Logger.getLogger(TC001_CreateAccount.class.getName());
 	CreateAnAccount acc;
+
 	
 	/**
 	 * This method will used to perform the entry operations of the Test 
@@ -49,6 +51,7 @@ public class TC001_CreateAccount extends Common_Functions {
 	@BeforeMethod
 	public void setup() throws IOException {
 		init();
+
 	}
 
 	/**
@@ -113,8 +116,10 @@ public class TC001_CreateAccount extends Common_Functions {
 	 * @author Jagatheshwaran 
 	 */
 	@AfterMethod
-	public void close() {
+	public void teardown() {
 		closeBrowser();
+		
 	}
-
+	
+	
 }

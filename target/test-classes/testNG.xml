@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
 <suite name="Regression Suite">
 	<listeners>
 		<listener class-name="com.jaga.pageobjectmodel.customlisteners.Listener"></listener>
 	</listeners>
+	<!-- <test name="TestGCRShopApp"> <classes> <class name="com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication" 
+		/> </classes> </test> -->
 	<test name="CreateAccount">
 		<classes>
 			<class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount" />
@@ -14,4 +17,5 @@
 			<class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn" />
 		</classes>
 	</test>
+
 </suite> 

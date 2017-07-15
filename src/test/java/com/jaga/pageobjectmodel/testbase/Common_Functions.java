@@ -22,8 +22,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 
 import org.apache.log4j.*;
 import org.openqa.selenium.By;
@@ -54,25 +52,21 @@ public class Common_Functions implements Functions{
 	 */
 	static Logger logger = Logger.getLogger(Common_Functions.class.getName());
 	public static Properties Repository = new Properties();
-	public File f;
+	public File fe;
 	public FileInputStream FI;
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	public WebElement element;
 	Common_Functions cf;
-	public static int indexSI = 1;
+
 
 	/**
 	 * This method will load the property file,select the browser and launch the browser with the URL
 	 * 
 	 * @author Jagatheshwaran
 	 */
-	
 	public void init() throws IOException {
 		
-		/*String logConfigPath = "Log4j.properties";
-		PropertyConfigurator.configure(logConfigPath);
-		logger.setLevel(Level.WARN);*/
 		loadProperties();
 		selectBrowser(Repository.getProperty("browser"));
 		driver.get(Repository.getProperty("url"));
@@ -86,8 +80,8 @@ public class Common_Functions implements Functions{
 	 * @author Jagatheshwaran
 	 */
 	public void loadProperties() throws IOException {
-		f = new File(System.getProperty("user.dir") + "//src//test//java//com//jaga//pageobjectmodel//config//config.properties");
-		FI = new FileInputStream(f);
+		fe = new File(System.getProperty("user.dir") + "//src//test//java//com//jaga//pageobjectmodel//config//config.properties");
+		FI = new FileInputStream(fe);
 		Repository.load(FI);
 
 	}
@@ -2016,9 +2010,9 @@ public class Common_Functions implements Functions{
 	 */
 	public String getTestData(String property) throws InvocationTargetException {
 
-		f = new File(System.getProperty("user.dir") + "//src//test//java//com//jaga//pageobjectmodel//config//config.properties");
+		fe = new File(System.getProperty("user.dir") + "//src//test//java//com//jaga//pageobjectmodel//config//config.properties");
 		try {
-			FI = new FileInputStream(f);
+			FI = new FileInputStream(fe);
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -2040,10 +2034,7 @@ public class Common_Functions implements Functions{
 		}
 
 	}
-	/*public static void main(String ar[])
-	{
-		String logConfigPath = "Log4j.properties";
-		PropertyConfigurator.configure(logConfigPath);
-		logger.setLevel(Level.WARN);
-	}*/
+
+
+
 }

@@ -13,7 +13,6 @@ package com.jaga.pageobjectmodel.pagelibrary;
  * Importing the necessary predefined classes
  */
 import java.lang.reflect.InvocationTargetException;
-//import java.util.logging.Logger;
 import org.apache.log4j.*;
 
 import org.openqa.selenium.By;
@@ -21,13 +20,14 @@ import org.testng.Assert;
 
 import com.jaga.pageobjectmodel.testbase.Common_Functions;
 
+
 /**
  * A class is created with name : CreateAnAccount
  * CreateAnAccount class extends Common_Functions class to utilize the reusable methods of the Common_Functions class
  *
  * @author Jagatheshwaran
  */
-public class CreateAnAccount {
+public class CreateAnAccount extends Common_Functions{
 	
 	/**
 	 * Initializing Logger
