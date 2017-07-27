@@ -110,6 +110,7 @@ public class Excel_Reader implements Excel_Functions{
 			cell = row.getCell(colName);
 			if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 				return cell.getStringCellValue();
+				//return String.valueOf(cell.getStringCellValue());
 			} else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 				return String.valueOf(cell.getNumericCellValue());
 			} else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN) {

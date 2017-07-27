@@ -1268,6 +1268,7 @@ public class Common_Functions implements Functions{
 	 * This method will handle Alert accept
 	 * 
 	 * @author Jagatheshwaran
+	 * @return 
 	 */
 	public void acceptTheAlert() {
 		try {
@@ -1365,7 +1366,7 @@ public class Common_Functions implements Functions{
 			logger.error("Unexpected exception in verifying presence of alert:" + e.getMessage());
 			throw new RuntimeException("FAILED");
 		}
-		return false;
+		return true;
 	}
 
 	/**

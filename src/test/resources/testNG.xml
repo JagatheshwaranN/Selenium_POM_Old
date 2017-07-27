@@ -5,8 +5,7 @@
 	<listeners>
 		<listener class-name="com.jaga.pageobjectmodel.customlisteners.Listener"></listener>
 	</listeners>
-	<!-- <test name="TestGCRShopApp"> <classes> <class name="com.jaga.pageobjectmodel.testscripts.TestGCRShopApplication" 
-		/> </classes> </test> -->
+	<!-- The below classes TC001_CreateAccount and TC002_SignIn are used to run the test methods by a separate class -->
 	<test name="CreateAccount">
 		<classes>
 			<class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount" />
@@ -15,6 +14,12 @@
 	<test name="SignIn">
 		<classes>
 			<class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn" />
+		</classes>
+	</test>
+	<!-- The below class is used to run all the test methods by a single class -->
+	<test name="TestCaseExecutionScript">
+		<classes>
+			<class name="com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" />
 		</classes>
 	</test>
 
