@@ -101,7 +101,7 @@ public class CreateAnAccount extends Common_Functions{
 				Assert.assertEquals(ActualUrl, ExpectedUrl);
 
 			} else {
-				logger.info("The Account has not been Registered and Created Successfully");
+				logger.info("The Account has not been Registered and Created UnSuccessfully");
 				logger.info(cf.getTextByXpath(AccountCreationError));
 				Assert.assertEquals(ActualUrl, ExpectedUrl);
 

@@ -87,7 +87,7 @@ public class Listener extends Common_Functions implements ITestListener {
 
 			Reporter.log("<a href=\"" + failureImageFileName + "\"><img src=\"file:///" + failureImageFileName + "\" alt=\"\"" + "height='100' width='100'/> " + "<br />");
 			Reporter.setCurrentTestResult(null);
-			Reporter.log(result.getName() + "--Test method failed\n");
+			Reporter.log(result.getName() + "--Test method passed\n");
 
 		}
 	}
