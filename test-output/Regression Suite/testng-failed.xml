@@ -12,24 +12,37 @@
           <include name="setup"/>
         </methods>
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+      <class name="com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
       <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
         <methods>
           <include name="teardown"/>
-          <include name="testcreateAccountRegistration" invocation-numbers="1"/>
+          <include name="testcreateAccountRegistration" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
     </classes>
   </test> <!-- CreateAccount(failed) -->
-  <test name="SignIn(failed)">
+  <test name="TestCaseExecutionScript(failed)">
     <classes>
       <class name="com.jaga.pageobjectmodel.testscripts.TC002_SignIn">
         <methods>
           <include name="close"/>
-          <include name="testSignIn" invocation-numbers="1"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC002_SignIn -->
+      <class name="com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+        <methods>
+          <include name="testSignIn"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+          <include name="testcreateAccountRegistration" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
       <class name="com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount">
         <methods>
           <include name="teardown"/>
@@ -37,5 +50,5 @@
         </methods>
       </class> <!-- com.jaga.pageobjectmodel.testscripts.TC001_CreateAccount -->
     </classes>
-  </test> <!-- SignIn(failed) -->
+  </test> <!-- TestCaseExecutionScript(failed) -->
 </suite> <!-- Failed suite [Regression Suite] -->

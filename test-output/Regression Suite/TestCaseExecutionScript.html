@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TestCaseExecutionScript</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 27 20:51:55 IST 2017</td>
+<td>Started on:</td><td>Sat Mar 03 09:16:27 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>71 seconds (71199 ms)</td>
+<tr><td>Total time:</td><td>22 seconds (22574 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,37 +67,74 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testSignIn()'><b>testSignIn</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript<br>Parameters: Y, SignIn, testjaga277171@gmail.com, jaga@12345<br/>
-<a href="#Output-17521583" onClick='toggleBox("Output-17521583", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-17521583" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-17521583">
-<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-27-2017_20-06-testSignIn.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-27-2017_20-06-testSignIn.png" alt=""height='100' width='100'/> <br /><br/>
-</div>
-</td>
-<td></td>
-<td>8</td>
-<td>com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript@1d4520b</td></tr>
-<tr>
 <td title='com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testcreateAccountRegistration()'><b>testcreateAccountRegistration</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript<br>Parameters: Y, CreateAccount, Jaga, Waran, 08/30/1991, testjaga277171@gmail.com, IT Company, Sholinganallur, 600119, Chennai, TamilNadu, India, 9876543212, jaga@12345, jaga@12345<br/>
-<a href="#Output-7717388" onClick='toggleBox("Output-7717388", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-4767936" onClick='toggleBox("Output-4767936", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-7717388" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-7717388">
-<a href="E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-27-2017_20-44-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\selenium//src//test//resources//screenshots//success//07-27-2017_20-44-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br /><br/>
+<a href="#Output-4767936" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-4767936">
+<a href="E:\ECLIPSE ENV\Selenium_Excercises\Selenium_PageObjectModelFramework//src//test//resources//screenshots//failure//03-03-2018_09-49-testcreateAccountRegistration.png"><img src="file:///E:\ECLIPSE ENV\Selenium_Excercises\Selenium_PageObjectModelFramework//src//test//resources//screenshots//failure//03-03-2018_09-49-testcreateAccountRegistration.png" alt=""height='100' width='100'/> <br /><br/>
 </div>
 </td>
+<td><div><pre>java.lang.AssertionError: expected [http://www.gcrit.com/build3/create_account_success.php] but found [http://www.gcrit.com/build3/create_account.php]
+	at com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:106)
+	at com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testcreateAccountRegistration(TestCaseExecutionScript.java:106)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace4767936", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace4767936'><pre>java.lang.AssertionError: expected [http://www.gcrit.com/build3/create_account_success.php] but found [http://www.gcrit.com/build3/create_account.php]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:106)
+	at com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testcreateAccountRegistration(TestCaseExecutionScript.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>9</td>
+<td>com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript@707e36</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testSignIn()'><b>testSignIn</b><br>Test class: com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</td>
 <td></td>
-<td>12</td>
-<td>com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript@1d4520b</td></tr>
+<td>0</td>
+<td>null</td></tr>
 </table><p>
 </body>
 </html>

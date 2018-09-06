@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+              <span class="suite-name border-failed">com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">2 methods, 1 failed,  1 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="hide-methods failed suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript"> (hide)</a> <!-- hide-methods failed suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+                      <a href="#" panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="show-methods failed suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript"> (show)</a> <!-- show-methods failed suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+                    </span>
+                    <div class="method-list-content failed suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" title="com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" hash-for-method="testcreateAccountRegistration(Y, CreateAccount, Jaga, Waran, 08/30/1991, testjaga277171@gmail.com, IT Company, Sholinganallur, 600...)">testcreateAccountRegistration(Y, CreateAccount, Jaga, Waran, 08/30/1991, testjaga277171@gmail.com, IT Company, Sholinganallur, 600...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="hide-methods skipped suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript"> (hide)</a> <!-- hide-methods skipped suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+                      <a href="#" panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="show-methods skipped suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript"> (show)</a> <!-- show-methods skipped suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+                    </span>
+                    <div class="method-list-content skipped suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" title="com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" hash-for-method="testSignIn">testSignIn</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+          <div class="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testcreateAccountRegistration(Y, CreateAccount, Jaga, Waran, 08/30/1991, testjaga277171@gmail.com, IT Company, Sholinganallur, 600...)">
+                  </a> <!-- testcreateAccountRegistration(Y, CreateAccount, Jaga, Waran, 08/30/1991, testjaga277171@gmail.com, IT Company, Sholinganallur, 600...) -->
+                  <span class="method-name">testcreateAccountRegistration</span>
+                  <span class="parameters">(Y, CreateAccount, Jaga, Waran, 08/30/1991, testjaga277171@gmail.com, IT Company, Sholinganallur, 600119, Chennai, TamilNadu, India, 9876543212, jaga@12345, jaga@12345)</span>
+                  <div class="stack-trace"><b>"java.lang.AssertionError: expected [http://www.gcrit.com/build3/create_account_success.php] but found [http://www.gcrit.com/build3/create_account.php]
+	at com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:106)
+	at com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testcreateAccountRegistration(TestCaseExecutionScript.java:106)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+... Removed 30 stack frames<br/> java.lang.AssertionError: expected [http://www.gcrit.com/build3/create_account_success.php] but found [http://www.gcrit.com/build3/create_account.php]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:106)
+	at com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testcreateAccountRegistration(TestCaseExecutionScript.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+"</b><br>org.testng.Assert.fail(Assert.java:94)<br>org.testng.Assert.failNotEquals(Assert.java:494)<br>org.testng.Assert.assertEquals(Assert.java:123)<br>org.testng.Assert.assertEquals(Assert.java:176)<br>org.testng.Assert.assertEquals(Assert.java:186)<br>com.jaga.pageobjectmodel.pagelibrary.CreateAnAccount.createAccountRegistration(CreateAnAccount.java:106)<br>com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript.testcreateAccountRegistration(TestCaseExecutionScript.java:106)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)<br>org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)<br>org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)<br>org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)<br>org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)<br>org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)<br>org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript-class-failed -->
+          <div class="suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSignIn">
+                  </a> <!-- testSignIn -->
+                  <span class="method-name">testSignIn</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript-class-skipped -->
+        </div> <!-- panel com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+        <div panel-name="test-xml-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite verbose=&quot;0&quot; name=&quot;com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript&quot;&gt;
+  &lt;test name=&quot;Command line test&quot; preserve-order=&quot;false&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Command line test --&gt;
+&lt;/suite&gt; &lt;!-- com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Command line test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript');
+function tableData_com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(2);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testcreateAccountRegistration')
+data.setCell(0, 2, 'com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript')
+data.setCell(0, 3, 16705);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testSignIn')
+data.setCell(1, 2, 'com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript')
+data.setCell(1, 3, 1);
+window.suiteTableData['com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript']= { tableData: data, tableDiv: 'times-div-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <div id="times-div-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript">
+              </div> <!-- times-div-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.jaga.pageobjectmodel.testscripts.TestCaseExecutionScript</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testcreateAccountRegistration(Y, CreateAccount, Jaga, Waran, 08/30/1991, testjaga277171@gmail.com, IT Company, Sholinganallur, 600...)</span>
+                <span class="method-start">62112 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">78819 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
